@@ -109,6 +109,12 @@ describe('Jiufeng feature parity', () => {
     expect(read('JFResetPasswordView.vue')).toContain('jf-reset-page')
   })
 
+  it('uses the Jiufeng shell for Prompt Audit', () => {
+    const router = read('../../router/index.ts')
+    expect(router).toContain("@/views/home-jiufeng/admin/JFPromptAuditView.vue")
+    expect(read('admin/JFPromptAuditView.vue')).toContain('JFAppLayout')
+  })
+
   it('includes current admin security and bulk management capabilities', () => {
     const accounts = read('admin/AccountsView.vue')
     expect(accounts).toContain('upstreamBillingProbeSettings')
