@@ -232,6 +232,12 @@ interface Emits {
   (e: 'update:show', value: boolean): void
 }
 
+type JiufengOpsErrorDetail = OpsErrorDetail & {
+  attempted_key_prefix?: string | null
+  deleted_key_owner_email?: string | null
+  deleted_key_name?: string | null
+}
+
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
@@ -239,7 +245,7 @@ const { t } = useI18n()
 const appStore = useAppStore()
 
 const loading = ref(false)
-const detail = ref<OpsErrorDetail | null>(null)
+const detail = ref<JiufengOpsErrorDetail | null>(null)
 
 const showUpstreamList = computed(() => props.errorType === 'request')
 
