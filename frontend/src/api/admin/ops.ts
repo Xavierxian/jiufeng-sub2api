@@ -918,6 +918,11 @@ export interface OpsErrorLog {
   // 关联 api_key 名称（后端 LEFT JOIN api_keys；软删保留 name，故已删 key 仍有原名）。
   api_key_name?: string
   api_key_deleted?: boolean
+  // API key attribution snapshots remain available after the key is deleted.
+  attempted_key_prefix?: string | null
+  deleted_key_owner_user_id?: number | null
+  deleted_key_owner_email?: string | null
+  deleted_key_name?: string | null
   account_id?: number | null
   account_name: string
   group_id?: number | null
