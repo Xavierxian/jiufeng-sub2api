@@ -1,0 +1,1827 @@
+.jf-saas-shell {
+  --jf-bg: #f6f8fb;
+  --jf-panel: #ffffff;
+  --jf-panel-muted: #f9fafb;
+  --jf-border: #e6eaf0;
+  --jf-border-strong: #d6dde7;
+  --jf-text: #172033;
+  --jf-text-muted: #667085;
+  --jf-text-soft: #98a2b3;
+  --jf-primary: #0e9f8c;
+  --jf-primary-strong: #087f70;
+  --jf-primary-soft: #e7f7f4;
+  --jf-danger: #d92d20;
+  --jf-warning: #dc6803;
+  --jf-success: #039855;
+  --jf-sidebar-width: 244px;
+  --jf-sidebar-collapsed-width: 68px;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--jf-bg);
+  color: var(--jf-text);
+  font-size: 14px;
+}
+
+.dark .jf-saas-shell {
+  --jf-bg: #0b0b0d;
+  --jf-panel: #121214;
+  --jf-panel-muted: #1a1a1d;
+  --jf-border: #2a2a30;
+  --jf-border-strong: #3a3a42;
+  --jf-text: #f3f4f6;
+  --jf-text-muted: #b4b4b8;
+  --jf-text-soft: #7f7f86;
+  --jf-primary: #20c7b3;
+  --jf-primary-strong: #5eead4;
+  --jf-primary-soft: rgba(32, 199, 179, 0.14);
+}
+
+.jf-saas-content {
+  position: relative;
+  min-height: 100vh;
+  transition: margin-left 180ms ease;
+}
+
+@media (min-width: 1024px) {
+  .jf-saas-content--expanded {
+    margin-left: var(--jf-sidebar-width);
+  }
+
+  .jf-saas-content--collapsed {
+    margin-left: var(--jf-sidebar-collapsed-width);
+  }
+}
+
+.jf-saas-main {
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .jf-saas-main {
+    padding: 18px 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .jf-saas-main {
+    padding: 20px 24px;
+  }
+}
+
+.jf-saas-shell .bg-mesh-gradient {
+  display: none;
+}
+
+.jf-saas-shell .sidebar {
+  width: var(--jf-sidebar-width) !important;
+  background: var(--jf-panel) !important;
+  border-right: 1px solid var(--jf-border) !important;
+  box-shadow: 1px 0 0 rgba(16, 24, 40, 0.02);
+}
+
+.jf-saas-shell .sidebar[class~="w-[72px]"] {
+  width: var(--jf-sidebar-collapsed-width) !important;
+}
+
+.jf-saas-shell .sidebar-header {
+  height: 56px !important;
+  padding: 0 14px !important;
+  border-bottom: 1px solid var(--jf-border) !important;
+  gap: 10px !important;
+}
+
+.jf-saas-shell .sidebar-header-collapsed {
+  justify-content: center;
+  padding-inline: 10px !important;
+}
+
+.jf-saas-shell .sidebar-logo {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  flex-basis: 34px !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  background: var(--jf-primary-soft);
+  border: 1px solid rgba(14, 159, 140, 0.18);
+}
+
+.jf-saas-shell .sidebar-brand-title {
+  color: var(--jf-text) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+.jf-saas-shell .sidebar-nav {
+  padding: 10px 8px !important;
+}
+
+.jf-saas-shell .sidebar-section {
+  margin-bottom: 16px !important;
+}
+
+.jf-saas-shell .sidebar-section-title {
+  min-height: 24px !important;
+  margin: 10px 0 6px !important;
+  padding: 0 10px !important;
+  color: var(--jf-text-soft) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.jf-saas-shell .sidebar-link {
+  min-height: 40px !important;
+  margin-bottom: 2px !important;
+  padding: 0 10px !important;
+  gap: 10px !important;
+  border-radius: 8px !important;
+  color: #344054 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+.dark .jf-saas-shell .sidebar-link {
+  color: #d4d4d8 !important;
+}
+
+.jf-saas-shell .sidebar-link:hover {
+  background: #f2f5f8 !important;
+  color: #101828 !important;
+}
+
+.dark .jf-saas-shell .sidebar-link:hover {
+  background: #1f1f23 !important;
+  color: #ffffff !important;
+}
+
+.jf-saas-shell .sidebar-link-active {
+  background: var(--jf-primary-soft) !important;
+  color: var(--jf-primary) !important;
+  box-shadow: inset 3px 0 0 var(--jf-primary);
+}
+
+.jf-saas-shell .sidebar-link svg,
+.jf-saas-shell .sidebar-svg-icon :where(svg) {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.jf-saas-shell .sidebar-label {
+  max-width: 168px !important;
+}
+
+.jf-saas-shell .sidebar-link-collapsed {
+  justify-content: center !important;
+  padding-inline: 0 !important;
+}
+
+.jf-saas-shell .sidebar-label-collapsed,
+.jf-saas-shell .sidebar-brand-collapsed {
+  max-width: 0 !important;
+}
+
+.jf-saas-shell .sidebar > .mt-auto {
+  border-top: 1px solid var(--jf-border) !important;
+  padding: 8px !important;
+}
+
+.jf-saas-shell header.glass {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid var(--jf-border) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.dark .jf-saas-shell header.glass {
+  background: rgba(18, 18, 20, 0.94) !important;
+}
+
+.jf-saas-shell header.glass > div {
+  height: 56px !important;
+  padding-inline: 16px !important;
+}
+
+.jf-saas-shell header h1 {
+  color: var(--jf-text) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+}
+
+.jf-saas-shell header p {
+  color: var(--jf-text-muted) !important;
+  font-size: 12px !important;
+}
+
+.jf-saas-shell header .rounded-xl,
+.jf-saas-shell header .rounded-2xl {
+  border-radius: 8px !important;
+}
+
+.jf-saas-shell .card,
+.jf-saas-shell .glass-card,
+.jf-saas-shell .card-glass,
+.jf-saas-shell .stat-card,
+.jf-saas-shell .table-scroll-container,
+.jf-saas-shell .modal-content,
+.jf-saas-shell .dialog-container,
+.jf-saas-shell .dropdown {
+  background: var(--jf-panel) !important;
+  border: 1px solid var(--jf-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04) !important;
+}
+
+.dark .jf-saas-shell .card,
+.dark .jf-saas-shell .glass-card,
+.dark .jf-saas-shell .card-glass,
+.dark .jf-saas-shell .stat-card,
+.dark .jf-saas-shell .table-scroll-container,
+.dark .jf-saas-shell .modal-content,
+.dark .jf-saas-shell .dialog-container,
+.dark .jf-saas-shell .dropdown {
+  background: var(--jf-panel) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18) !important;
+}
+
+.jf-saas-shell .card-header,
+.jf-saas-shell .card-body,
+.jf-saas-shell .card-footer {
+  padding: 14px 16px !important;
+}
+
+.jf-saas-shell .page-header {
+  margin-bottom: 14px !important;
+}
+
+.jf-saas-shell .page-title {
+  color: var(--jf-text) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+
+.jf-saas-shell .page-description,
+.jf-saas-shell .input-hint,
+.jf-saas-shell .stat-label {
+  color: var(--jf-text-muted) !important;
+  font-size: 12px !important;
+}
+
+.jf-saas-shell .stat-card {
+  min-height: 104px;
+  padding: 16px !important;
+  gap: 12px !important;
+}
+
+.jf-saas-shell .stat-icon {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px !important;
+}
+
+.jf-saas-shell .stat-value {
+  color: var(--jf-text) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+
+.jf-saas-shell .btn,
+.jf-saas-shell .btn-primary,
+.jf-saas-shell .btn-secondary,
+.jf-saas-shell .btn-ghost,
+.jf-saas-shell .btn-danger,
+.jf-saas-shell .btn-success,
+.jf-saas-shell .btn-warning {
+  min-height: 34px;
+  border-radius: 6px !important;
+  padding: 7px 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+.jf-saas-shell .btn-primary {
+  background: var(--jf-primary) !important;
+  color: #ffffff !important;
+}
+
+.jf-saas-shell .btn-primary:hover {
+  background: var(--jf-primary-strong) !important;
+}
+
+.jf-saas-shell .btn-secondary {
+  background: var(--jf-panel) !important;
+  border: 1px solid var(--jf-border-strong) !important;
+  color: var(--jf-text) !important;
+}
+
+.jf-saas-shell .btn-danger {
+  background: var(--jf-danger) !important;
+}
+
+.jf-saas-shell .btn-success {
+  background: var(--jf-success) !important;
+}
+
+.jf-saas-shell .btn-warning {
+  background: var(--jf-warning) !important;
+}
+
+.jf-saas-shell .btn-icon {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+}
+
+.jf-saas-shell .input,
+.jf-saas-shell input:not([type='checkbox']):not([type='radio']):not([type='range']),
+.jf-saas-shell select,
+.jf-saas-shell textarea {
+  min-height: 34px;
+  border-color: var(--jf-border-strong) !important;
+  border-radius: 6px !important;
+  background-color: var(--jf-panel) !important;
+  color: var(--jf-text) !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+}
+
+.jf-saas-shell textarea {
+  min-height: 80px;
+}
+
+.jf-saas-shell .input:focus,
+.jf-saas-shell input:not([type='checkbox']):not([type='radio']):not([type='range']):focus,
+.jf-saas-shell select:focus,
+.jf-saas-shell textarea:focus {
+  border-color: var(--jf-primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(14, 159, 140, 0.14) !important;
+}
+
+.jf-saas-shell .input-label {
+  margin-bottom: 6px !important;
+  color: var(--jf-text) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.jf-saas-shell .tabs {
+  gap: 2px !important;
+  padding: 3px !important;
+  border-radius: 8px !important;
+  background: #edf1f5 !important;
+}
+
+.dark .jf-saas-shell .tabs {
+  background: #1a1a1d !important;
+}
+
+.jf-saas-shell .tab {
+  border-radius: 6px !important;
+  padding: 7px 12px !important;
+  font-size: 13px !important;
+}
+
+.jf-saas-shell .tab-active {
+  background: var(--jf-panel) !important;
+  color: var(--jf-text) !important;
+}
+
+.jf-saas-shell .badge {
+  border-radius: 999px !important;
+  padding: 2px 8px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+.jf-saas-shell .table-scroll-container {
+  border-color: var(--jf-border) !important;
+}
+
+.jf-saas-shell .table-scroll-container .table-wrapper,
+.jf-saas-shell .table-wrapper {
+  background: var(--jf-panel);
+}
+
+.jf-saas-shell table {
+  color: var(--jf-text);
+  font-size: 13px;
+}
+
+.jf-saas-shell table thead,
+.jf-saas-shell .table-scroll-container thead {
+  background: var(--jf-panel-muted) !important;
+}
+
+.jf-saas-shell table th,
+.jf-saas-shell .table th,
+.jf-saas-shell .table-scroll-container th {
+  height: 40px !important;
+  padding: 10px 14px !important;
+  border-bottom: 1px solid var(--jf-border) !important;
+  color: var(--jf-text-muted) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.jf-saas-shell table td,
+.jf-saas-shell .table td,
+.jf-saas-shell .table-scroll-container td {
+  height: 44px !important;
+  padding: 8px 14px !important;
+  border-bottom: 1px solid rgba(230, 234, 240, 0.78) !important;
+  color: var(--jf-text) !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+.dark .jf-saas-shell table td,
+.dark .jf-saas-shell .table td,
+.dark .jf-saas-shell .table-scroll-container td {
+  border-bottom-color: rgba(42, 42, 48, 0.86) !important;
+}
+
+.jf-saas-shell table tbody tr:hover,
+.jf-saas-shell .table tbody tr:hover {
+  background: #f8fafc !important;
+}
+
+.dark .jf-saas-shell table tbody tr:hover,
+.dark .jf-saas-shell .table tbody tr:hover {
+  background: #1f1f23 !important;
+}
+
+.dark .jf-saas-shell [class*="dark:bg-dark-950"],
+.dark .jf-saas-shell [class*="dark:bg-slate-950"],
+.dark .jf-saas-shell [class*="dark:bg-gray-950"] {
+  background-color: #0b0b0d !important;
+}
+
+.dark .jf-saas-shell [class*="dark:bg-dark-900"],
+.dark .jf-saas-shell [class*="dark:bg-slate-900"],
+.dark .jf-saas-shell [class*="dark:bg-gray-900"] {
+  background-color: #121214 !important;
+}
+
+.dark .jf-saas-shell [class*="dark:bg-dark-800"],
+.dark .jf-saas-shell [class*="dark:bg-slate-800"],
+.dark .jf-saas-shell [class*="dark:bg-gray-800"] {
+  background-color: #17171a !important;
+}
+
+.dark .jf-saas-shell [class*="dark:bg-dark-700"],
+.dark .jf-saas-shell [class*="dark:bg-slate-700"],
+.dark .jf-saas-shell [class*="dark:bg-gray-700"] {
+  background-color: #202024 !important;
+}
+
+.dark .jf-saas-shell [class*="dark:hover:bg-dark-800"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-slate-800"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-gray-800"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-dark-700"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-slate-700"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-gray-700"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-dark-600"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-slate-600"]:hover,
+.dark .jf-saas-shell [class*="dark:hover:bg-gray-600"]:hover {
+  background-color: #26262b !important;
+}
+
+.dark .jf-saas-shell [class*="dark:border-dark-"],
+.dark .jf-saas-shell [class*="dark:border-slate-"],
+.dark .jf-saas-shell [class*="dark:border-gray-"] {
+  border-color: var(--jf-border) !important;
+}
+
+.dark .jf-saas-shell [class*="dark:ring-dark-"],
+.dark .jf-saas-shell [class*="dark:ring-slate-"],
+.dark .jf-saas-shell [class*="dark:ring-gray-"] {
+  --tw-ring-color: var(--jf-border) !important;
+}
+
+.jf-saas-shell .dropdown {
+  padding: 4px !important;
+}
+
+.jf-saas-shell .dropdown-item {
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  color: var(--jf-text) !important;
+  font-size: 13px !important;
+}
+
+.jf-saas-shell .dropdown-item:hover {
+  background: var(--jf-panel-muted) !important;
+}
+
+.jf-saas-shell .modal-header,
+.jf-saas-shell .modal-footer,
+.jf-saas-shell .dialog-header,
+.jf-saas-shell .dialog-footer {
+  border-color: var(--jf-border) !important;
+  padding: 14px 16px !important;
+}
+
+.jf-saas-shell .modal-body,
+.jf-saas-shell .dialog-body {
+  padding: 14px 16px !important;
+}
+
+.jf-saas-shell .modal-title {
+  color: var(--jf-text) !important;
+  font-size: 18px !important;
+}
+
+.jf-saas-shell .rounded-xl,
+.jf-saas-shell .rounded-2xl,
+.jf-saas-shell .rounded-\[1rem\],
+.jf-saas-shell .rounded-\[20px\] {
+  border-radius: 8px !important;
+}
+
+.jf-saas-shell .rounded-lg {
+  border-radius: 6px !important;
+}
+
+.jf-saas-shell .shadow-md,
+.jf-saas-shell .shadow-lg,
+.jf-saas-shell .shadow-xl,
+.jf-saas-shell .shadow-2xl,
+.jf-saas-shell .shadow-card,
+.jf-saas-shell .shadow-glass,
+.jf-saas-shell .shadow-glow {
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05) !important;
+}
+
+.jf-saas-shell .text-gradient {
+  background: none !important;
+  color: var(--jf-primary) !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+@media (max-width: 1023px) {
+  .jf-saas-shell .sidebar {
+    width: var(--jf-sidebar-width) !important;
+  }
+
+  .jf-saas-main {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jf-saas-shell *,
+  .jf-saas-shell *::before,
+  .jf-saas-shell *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.jf-cloud-shell {
+  --jf-cloud-header-height: 64px;
+  --jf-cloud-nav-height: 112px;
+  --jf-bg: #f3f6fa;
+  --jf-panel-muted: #f7f9fc;
+  --jf-border: #dfe6ef;
+  --jf-border-strong: #cbd5e1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(243, 246, 250, 0) 220px),
+    var(--jf-bg);
+}
+
+.dark .jf-cloud-shell {
+  --jf-bg: #101114;
+  --jf-panel: #17181c;
+  --jf-panel-muted: #202127;
+  --jf-border: #2f323a;
+  --jf-border-strong: #424650;
+  background:
+    linear-gradient(180deg, rgba(31, 33, 39, 0.82), rgba(16, 17, 20, 0) 220px),
+    var(--jf-bg);
+}
+
+.jf-cloud-chrome {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  border-bottom: 1px solid var(--jf-border);
+  background: rgba(243, 246, 250, 0.9);
+  backdrop-filter: blur(18px);
+}
+
+.dark .jf-cloud-chrome {
+  background: rgba(16, 17, 20, 0.9);
+}
+
+.jf-cloud-header {
+  height: var(--jf-cloud-header-height);
+  border-bottom: 1px solid var(--jf-border);
+  background: transparent;
+}
+
+.jf-cloud-header__inner {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: minmax(260px, 1fr) minmax(240px, auto) minmax(280px, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 0 22px;
+  overflow: visible;
+}
+
+.jf-cloud-header__left,
+.jf-cloud-header__right,
+.jf-cloud-header__center {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.jf-cloud-header__left {
+  gap: 14px;
+}
+
+.jf-cloud-header__center {
+  justify-content: center;
+  gap: 6px;
+}
+
+.jf-cloud-header__right {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.jf-cloud-icon-link,
+.jf-cloud-shortcut,
+.jf-cloud-user-button,
+.jf-cloud-balance {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.jf-cloud-brand {
+  display: inline-flex;
+  min-width: 150px;
+  align-items: center;
+  gap: 10px;
+  color: var(--jf-text);
+  text-decoration: none;
+}
+
+.jf-cloud-brand__logo {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(14, 159, 140, 0.18);
+  border-radius: 8px;
+  background: var(--jf-primary-soft);
+}
+
+.jf-cloud-brand__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.jf-cloud-brand__text {
+  overflow: hidden;
+  max-width: 124px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.jf-cloud-page-title {
+  min-width: 0;
+  padding-left: 14px;
+  border-left: 1px solid var(--jf-border);
+}
+
+.jf-cloud-page-title__eyebrow {
+  display: block;
+  color: var(--jf-text-soft);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.jf-cloud-page-title h1 {
+  margin: 2px 0 0;
+  overflow: hidden;
+  color: var(--jf-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 760;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.jf-cloud-page-title p {
+  overflow: hidden;
+  max-width: 360px;
+  margin: 2px 0 0;
+  color: var(--jf-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.jf-cloud-version {
+  position: relative;
+  display: block;
+}
+
+.jf-cloud-version__button {
+  display: grid;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.jf-cloud-version__button:hover .jf-cloud-version__number {
+  color: var(--jf-primary);
+}
+
+.jf-cloud-version__line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jf-cloud-version__number {
+  color: var(--jf-text);
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.jf-cloud-version__new {
+  display: inline-flex;
+  min-height: 16px;
+  align-items: center;
+  border: 1px solid rgba(3, 152, 85, 0.22);
+  border-radius: 999px;
+  background: rgba(3, 152, 85, 0.12);
+  color: #039855;
+  font-size: 10px;
+  font-weight: 820;
+  line-height: 1;
+  padding: 0 6px;
+  text-transform: uppercase;
+}
+
+.jf-cloud-version__dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 90;
+  width: 304px;
+  overflow: hidden;
+  border: 1px solid var(--jf-border);
+  border-radius: 10px;
+  background: var(--jf-panel);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+}
+
+.dark .jf-cloud-version__dropdown {
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.44);
+}
+
+.jf-cloud-version__panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid var(--jf-border);
+}
+
+.jf-cloud-version__panel-head > div {
+  display: grid;
+  gap: 4px;
+}
+
+.jf-cloud-version__panel-head strong {
+  color: var(--jf-text);
+  font-size: 20px;
+  font-weight: 820;
+  line-height: 1;
+}
+
+.jf-cloud-version__status {
+  color: var(--jf-text-muted);
+  font-size: 12px;
+  font-weight: 720;
+}
+
+.jf-cloud-version__status--update {
+  color: #039855;
+}
+
+.jf-cloud-version__refresh {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--jf-border);
+  border-radius: 8px;
+  background: var(--jf-panel-muted);
+  color: var(--jf-text-muted);
+  cursor: pointer;
+}
+
+.jf-cloud-version__refresh:hover:not(:disabled) {
+  border-color: var(--jf-border-strong);
+  color: var(--jf-text);
+}
+
+.jf-cloud-version__refresh:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.jf-cloud-version__rows {
+  display: grid;
+  gap: 0;
+  padding: 8px 14px;
+}
+
+.jf-cloud-version__row {
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--jf-text-soft);
+  font-size: 12px;
+}
+
+.jf-cloud-version__row strong {
+  color: var(--jf-text);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.jf-cloud-version__release {
+  margin: 0 14px 12px;
+  padding: 10px;
+  border: 1px solid var(--jf-border);
+  border-radius: 8px;
+  background: var(--jf-panel-muted);
+}
+
+.jf-cloud-version__release-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.jf-cloud-version__release-head strong {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--jf-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 780;
+}
+
+.jf-cloud-version__release-head span {
+  flex: 0 0 auto;
+  color: var(--jf-text-soft);
+  font-size: 11px;
+  font-weight: 680;
+}
+
+.jf-cloud-version__release p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 6px 0 0;
+  color: var(--jf-text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.jf-cloud-version__github {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border-top: 1px solid var(--jf-border);
+  color: var(--jf-primary);
+  font-size: 13px;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.jf-cloud-version__github:hover {
+  background: var(--jf-primary-soft);
+}
+
+.jf-cloud-shortcut {
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--jf-border);
+  text-decoration: none;
+}
+
+.dark .jf-cloud-shortcut {
+  background: rgba(23, 24, 28, 0.74);
+}
+
+.jf-cloud-shortcut:hover,
+.jf-cloud-icon-link:hover,
+.jf-cloud-user-button:hover {
+  border-color: var(--jf-border-strong);
+  background: var(--jf-panel);
+  color: var(--jf-text);
+}
+
+.jf-cloud-icon-link {
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.jf-cloud-theme-toggle {
+  background: transparent;
+  cursor: pointer;
+}
+
+.jf-cloud-balance {
+  padding: 0 12px;
+  border-color: rgba(14, 159, 140, 0.18);
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary);
+}
+
+.jf-cloud-balance span {
+  font-weight: 800;
+}
+
+.jf-cloud-user-button {
+  padding: 3px 8px 3px 3px;
+  background: transparent;
+}
+
+.jf-cloud-user-button__avatar {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0e9f8c, #2563eb);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.jf-cloud-user-button__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jf-cloud-user-button__meta {
+  display: grid;
+  min-width: 0;
+  text-align: left;
+}
+
+.jf-cloud-user-button__meta div {
+  overflow: hidden;
+  max-width: 112px;
+  color: var(--jf-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.jf-cloud-user-button__meta span {
+  color: var(--jf-text-soft);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.jf-workspace-nav {
+  min-height: 52px;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  background: transparent;
+}
+
+.jf-workspace-nav__inner {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px 16px;
+  padding: 10px 22px;
+  overflow: visible;
+}
+
+.jf-workspace-nav__rail,
+.jf-workspace-nav__account,
+.jf-workspace-subnav,
+.jf-workspace-nav__tools {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.jf-workspace-nav__rail {
+  flex-wrap: wrap;
+  overflow: visible;
+  padding-bottom: 0;
+  scrollbar-width: none;
+}
+
+.jf-workspace-nav__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.jf-workspace-menu-host {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.jf-workspace-chip,
+.jf-workspace-account-link,
+.jf-workspace-subnav__link,
+.jf-workspace-tool {
+  display: inline-flex;
+  min-height: 38px;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.jf-workspace-chip {
+  padding: 0 12px;
+  background: transparent;
+}
+
+.jf-workspace-chip:hover,
+.jf-workspace-account-link:hover,
+.jf-workspace-subnav__link:hover,
+.jf-workspace-popover__link:hover,
+.jf-workspace-tool:hover {
+  border-color: var(--jf-border);
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--jf-text);
+}
+
+.dark .jf-workspace-chip:hover,
+.dark .jf-workspace-account-link:hover,
+.dark .jf-workspace-subnav__link:hover,
+.dark .jf-workspace-popover__link:hover,
+.dark .jf-workspace-tool:hover {
+  background: rgba(32, 33, 39, 0.86);
+}
+
+.jf-workspace-chip--active {
+  border-color: rgba(14, 159, 140, 0.24);
+  background: var(--jf-panel);
+  color: var(--jf-primary);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.jf-workspace-chip__icon,
+.jf-workspace-subnav__icon,
+.jf-workspace-tool__icon,
+.jf-workspace-drawer__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.jf-workspace-chip__chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 160ms ease;
+}
+
+.jf-workspace-nav__account {
+  grid-column: 2;
+  grid-row: 1;
+  justify-content: flex-end;
+  overflow-x: auto;
+}
+
+.jf-workspace-nav__tools {
+  grid-column: 2;
+  grid-row: 1;
+  display: none;
+  justify-content: flex-end;
+}
+
+.jf-workspace-nav__account > span,
+.jf-workspace-drawer__section {
+  flex: 0 0 auto;
+  color: var(--jf-text-soft);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.jf-workspace-account-link {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.jf-workspace-account-link--active {
+  border-color: var(--jf-border);
+  background: var(--jf-panel);
+  color: var(--jf-text);
+}
+
+.jf-workspace-subnav {
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  min-height: 40px;
+  padding: 8px;
+  border: 1px solid var(--jf-border);
+  border-radius: 10px;
+  background: var(--jf-panel);
+}
+
+.jf-workspace-subnav__link {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.jf-workspace-subnav__icon {
+  width: 15px;
+  height: 15px;
+}
+
+.jf-workspace-subnav__link--active {
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary);
+}
+
+.jf-workspace-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 90;
+  display: grid;
+  min-width: 220px;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--jf-border);
+  border-radius: 10px;
+  background: var(--jf-panel);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition:
+    opacity 120ms ease,
+    transform 140ms ease;
+}
+
+.dark .jf-workspace-popover {
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.jf-workspace-popover::before {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  height: 10px;
+  content: '';
+}
+
+.jf-workspace-menu-host:hover .jf-workspace-popover,
+.jf-workspace-menu-host:focus-within .jf-workspace-popover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.jf-workspace-menu-host:hover .jf-workspace-chip__chevron,
+.jf-workspace-menu-host:focus-within .jf-workspace-chip__chevron {
+  transform: rotate(180deg);
+}
+
+.jf-workspace-popover__link {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.jf-workspace-popover__icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.jf-workspace-popover__link--active {
+  border-color: rgba(14, 159, 140, 0.22);
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary);
+}
+
+.jf-workspace-nav__tools {
+  justify-content: flex-end;
+}
+
+.jf-workspace-tool {
+  padding: 0 10px;
+  background: transparent;
+}
+
+.jf-workspace-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(2px);
+}
+
+.jf-workspace-drawer {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 80;
+  display: flex;
+  width: min(92vw, 420px);
+  flex-direction: column;
+  border-right: 1px solid var(--jf-border);
+  background: var(--jf-panel);
+  box-shadow: 24px 0 48px rgba(15, 23, 42, 0.18);
+}
+
+.jf-workspace-drawer__header,
+.jf-workspace-drawer__footer {
+  flex: 0 0 auto;
+  border-bottom: 1px solid var(--jf-border);
+  padding: 14px;
+}
+
+.jf-workspace-drawer__footer {
+  border-top: 1px solid var(--jf-border);
+  border-bottom: 0;
+}
+
+.jf-workspace-drawer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jf-workspace-drawer__brand > span:last-child {
+  display: grid;
+  gap: 2px;
+}
+
+.jf-workspace-drawer__logo {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--jf-primary-soft);
+}
+
+.jf-workspace-drawer__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.jf-workspace-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jf-workspace-drawer__close {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--jf-text-muted);
+}
+
+.jf-workspace-drawer__close:hover {
+  background: var(--jf-panel-muted);
+  color: var(--jf-text);
+}
+
+.jf-workspace-drawer__body {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.jf-workspace-drawer__dashboard {
+  display: grid;
+  gap: 10px;
+}
+
+.jf-workspace-drawer__group {
+  overflow: hidden;
+  border: 1px solid var(--jf-border);
+  border-radius: 8px;
+  background: var(--jf-panel-muted);
+}
+
+.jf-workspace-drawer__group-head {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.jf-workspace-drawer__group-head:hover,
+.jf-workspace-drawer__group-head--active {
+  border-color: rgba(14, 159, 140, 0.24);
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary);
+}
+
+.jf-workspace-drawer__group-items {
+  display: grid;
+  gap: 4px;
+  padding: 0 8px 8px 42px;
+}
+
+.jf-workspace-drawer__link {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.jf-workspace-drawer__link:hover,
+.jf-workspace-drawer__link--active {
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary);
+}
+
+.jf-workspace-drawer__children {
+  display: grid;
+  gap: 2px;
+  margin: -2px 0 4px 28px;
+  padding-left: 10px;
+  border-left: 1px solid var(--jf-border);
+}
+
+.jf-workspace-drawer__child {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: var(--jf-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.jf-workspace-drawer__child:hover,
+.jf-workspace-drawer__child--active {
+  background: var(--jf-panel-muted);
+  color: var(--jf-text);
+}
+
+.jf-workspace-drawer__mini-icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+
+.jf-cloud-main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  padding: 22px;
+}
+
+.jf-cloud-page-frame {
+  width: min(100%, 1760px);
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: clip;
+}
+
+.jf-cloud-page-frame > :where(.space-y-4, .space-y-5, .space-y-6, .space-y-8) {
+  display: grid;
+  gap: 16px !important;
+}
+
+.jf-cloud-shell .card,
+.jf-cloud-shell .glass-card,
+.jf-cloud-shell .card-glass,
+.jf-cloud-shell .stat-card,
+.jf-cloud-shell .table-scroll-container,
+.jf-cloud-shell .modal-content,
+.jf-cloud-shell .dialog-container,
+.jf-cloud-shell .dropdown {
+  border-color: var(--jf-border) !important;
+  border-radius: 10px !important;
+  background: var(--jf-panel) !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+
+.dark .jf-cloud-shell .card,
+.dark .jf-cloud-shell .glass-card,
+.dark .jf-cloud-shell .card-glass,
+.dark .jf-cloud-shell .stat-card,
+.dark .jf-cloud-shell .table-scroll-container,
+.dark .jf-cloud-shell .modal-content,
+.dark .jf-cloud-shell .dialog-container,
+.dark .jf-cloud-shell .dropdown {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.26) !important;
+}
+
+.jf-cloud-shell .stat-card {
+  min-height: 92px;
+  padding: 14px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0)),
+    var(--jf-panel) !important;
+}
+
+.dark .jf-cloud-shell .stat-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0)),
+    var(--jf-panel) !important;
+}
+
+.jf-cloud-shell .page-header,
+.jf-cloud-shell .card-header {
+  border-bottom-color: var(--jf-border) !important;
+}
+
+.jf-cloud-shell .page-title {
+  font-size: 18px !important;
+}
+
+.jf-cloud-shell .btn,
+.jf-cloud-shell .btn-primary,
+.jf-cloud-shell .btn-secondary,
+.jf-cloud-shell .btn-ghost,
+.jf-cloud-shell .btn-danger,
+.jf-cloud-shell .btn-success,
+.jf-cloud-shell .btn-warning {
+  border-radius: 7px !important;
+}
+
+.jf-cloud-shell table thead,
+.jf-cloud-shell .table-scroll-container thead {
+  background: var(--jf-panel-muted) !important;
+}
+
+.jf-cloud-shell table th,
+.jf-cloud-shell .table th,
+.jf-cloud-shell .table-scroll-container th {
+  height: 38px !important;
+  color: var(--jf-text-muted) !important;
+  font-size: 12px !important;
+}
+
+.jf-cloud-shell table td,
+.jf-cloud-shell .table td,
+.jf-cloud-shell .table-scroll-container td {
+  height: 42px !important;
+}
+
+.jf-workspace-drawer-enter-active,
+.jf-workspace-drawer-leave-active {
+  transition:
+    opacity 160ms ease,
+    transform 180ms ease;
+}
+
+.jf-workspace-drawer-enter-from,
+.jf-workspace-drawer-leave-to {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+
+@media (max-width: 1180px) {
+  .jf-cloud-header__inner {
+    grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr);
+  }
+
+  .jf-cloud-header__center {
+    display: none;
+  }
+
+  .jf-workspace-nav__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .jf-workspace-nav__account,
+  .jf-workspace-nav__tools {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .jf-cloud-chrome {
+    position: sticky;
+  }
+
+  .jf-workspace-nav {
+    display: block;
+  }
+
+  .jf-cloud-header__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  .jf-cloud-header__left {
+    overflow: hidden;
+  }
+
+  .jf-cloud-header__right {
+    flex: 0 0 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .jf-cloud-brand {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .jf-cloud-brand__text {
+    max-width: 116px;
+  }
+
+  .jf-cloud-version {
+    display: block;
+    padding-left: 10px;
+  }
+
+  .jf-cloud-version__button {
+    pointer-events: none;
+  }
+
+  .jf-cloud-version .jf-cloud-page-title__eyebrow,
+  .jf-cloud-version__new {
+    display: none;
+  }
+
+  .jf-cloud-version__number {
+    font-size: 12px;
+    font-weight: 760;
+  }
+
+  .jf-cloud-icon-link span,
+  .jf-cloud-user-button__meta,
+  .jf-cloud-balance {
+    display: none;
+  }
+
+  .jf-cloud-main {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .jf-cloud-chrome {
+    overflow: visible;
+  }
+
+  .jf-workspace-nav {
+    position: relative;
+  }
+
+  .jf-cloud-header__left {
+    gap: 8px;
+  }
+
+  .jf-cloud-brand__text {
+    display: inline-block;
+    max-width: clamp(58px, 22vw, 88px);
+    font-size: 14px;
+  }
+
+  .jf-cloud-version {
+    padding-left: 8px;
+  }
+
+  .jf-cloud-version__number {
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .jf-cloud-theme-toggle {
+    display: inline-flex;
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .jf-cloud-icon-link:not(.jf-cloud-theme-toggle) {
+    display: none;
+  }
+
+  .jf-workspace-nav__inner {
+    padding: 8px 8px 10px;
+  }
+
+  .jf-workspace-nav__rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 7px;
+    width: 100%;
+  }
+
+  .jf-workspace-menu-host {
+    position: static;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .jf-workspace-chip {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 36px;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 9px;
+    padding-inline: 7px;
+    background: rgba(255, 255, 255, 0.42);
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .dark .jf-workspace-chip {
+    background: rgba(23, 24, 28, 0.56);
+  }
+
+  .jf-workspace-chip > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .jf-workspace-chip__icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .jf-workspace-chip__chevron {
+    width: 12px;
+    height: 12px;
+    margin-left: -2px;
+  }
+
+  .jf-workspace-popover {
+    top: calc(100% + 8px);
+    right: 8px;
+    left: 8px;
+    width: auto;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 7px;
+    border-radius: 12px;
+    box-shadow:
+      0 16px 44px rgba(15, 23, 42, 0.14),
+      0 0 0 1px rgba(255, 255, 255, 0.58);
+  }
+
+  .dark .jf-workspace-popover {
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.42),
+      0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+
+  .jf-workspace-popover__link {
+    min-height: 38px;
+    padding-inline: 12px;
+    border-radius: 9px;
+    font-size: 13px;
+  }
+
+  .jf-workspace-popover__icon {
+    width: 15px;
+    height: 15px;
+  }
+}
