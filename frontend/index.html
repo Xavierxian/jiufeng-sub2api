@@ -5,6 +5,27 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sub2API - AI API Gateway</title>
+    <script>
+      // Keep the Jiufeng home route from exposing the shared dark fallback while
+      // Vue waits for the lazy-loaded route component.
+      (() => {
+        const path = window.location.pathname
+        if (path === '/' || path === '/home' || path.startsWith('/home/')) {
+          document.documentElement.dataset.jiufengInitial = 'true'
+
+          const savedTheme = localStorage.getItem('theme')
+          const shouldUseDark =
+            savedTheme === 'dark' ||
+            (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', shouldUseDark)
+        }
+      })()
+    </script>
+    <style>
+      html[data-jiufeng-initial] body {
+        background: transparent !important;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
