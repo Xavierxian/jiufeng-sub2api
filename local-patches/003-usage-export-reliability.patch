@@ -1,0 +1,13 @@
+diff --git a/frontend/src/views/user/__tests__/UsageView.spec.ts b/frontend/src/views/user/__tests__/UsageView.spec.ts
+--- a/frontend/src/views/user/__tests__/UsageView.spec.ts
++++ b/frontend/src/views/user/__tests__/UsageView.spec.ts
+@@ -231,7 +231,7 @@
+     await (wrapper.vm as any).exportToCSV()
+ 
+     expect(exportedBlob).not.toBeNull()
+     expect(query).toHaveBeenCalledWith(expect.objectContaining({
+-      page_size: 100,
++      page_size: 1000,
+       sort_by: 'created_at',
+       sort_order: 'desc',
+     }))
