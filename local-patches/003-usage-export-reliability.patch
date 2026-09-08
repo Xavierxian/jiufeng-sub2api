@@ -1,0 +1,20 @@
+diff --git a/frontend/src/views/user/UsageView.vue b/frontend/src/views/user/UsageView.vue
+--- a/frontend/src/views/user/UsageView.vue
++++ b/frontend/src/views/user/UsageView.vue
+@@ -637,4 +637,4 @@ const exportToCSV = async () => {
+     const allLogs: UsageLog[] = []
+-    const pageSize = 100
++    const pageSize = 1000
+     const totalPages = Math.ceil(pagination.total / pageSize)
+     for (let page = 1; page <= totalPages; page++) {
+diff --git a/frontend/src/views/user/__tests__/UsageView.spec.ts b/frontend/src/views/user/__tests__/UsageView.spec.ts
+--- a/frontend/src/views/user/__tests__/UsageView.spec.ts
++++ b/frontend/src/views/user/__tests__/UsageView.spec.ts
+@@ -281,6 +281,6 @@
+     expect(exportedBlob).not.toBeNull()
+     expect(query).toHaveBeenCalledWith(expect.objectContaining({
+-      page_size: 100,
++      page_size: 1000,
+       sort_by: 'created_at',
+       sort_order: 'desc',
+       native_compaction_v2: true,
