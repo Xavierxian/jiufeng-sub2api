@@ -1,0 +1,1116 @@
+/* Jiufeng Studio ----------------------------------------------------------
+   Post-login visual system derived from the login/register experience:
+   editorial serif headings, warm neutrals, black actions and restrained jade.
+   This layer is deliberately scoped to .jf-studio. */
+
+.jf-studio {
+  --jf-bg: #f4f3ef;
+  --jf-panel: #fffefa;
+  --jf-panel-muted: #f5f4ef;
+  --jf-border: #e5e2da;
+  --jf-border-strong: #d3d0c7;
+  --jf-text: #171916;
+  --jf-text-muted: #686e68;
+  --jf-text-soft: #989c96;
+  --jf-primary: #256c60;
+  --jf-primary-strong: #174e46;
+  --jf-primary-soft: #e3efeb;
+  --jf-studio-black: #10120f;
+  --jf-control-active: #343834;
+  --jf-control-active-text: #fffefa;
+  --jf-studio-sand: #c5a66a;
+  --jf-studio-shadow: 0 1px 2px rgba(31, 36, 31, .03), 0 14px 38px rgba(31, 36, 31, .045);
+  --jf-studio-shadow-hover: 0 2px 3px rgba(31, 36, 31, .04), 0 20px 45px rgba(31, 36, 31, .075);
+  --jf-table-surface: #faf9f5;
+  --jf-table-row: #fffefa;
+  --jf-table-row-alt: #fdfcf8;
+  --jf-table-head: #efeee8;
+  --jf-table-border: rgba(116, 112, 97, .18);
+  --jf-table-hover: rgba(37, 108, 96, .065);
+  --jf-table-sticky-hover: #f1f5f0;
+  --jf-table-sticky-selected: #e3efeb;
+  --jf-scrollbar-track: var(--jf-bg);
+  --jf-scrollbar-thumb: var(--jf-border-strong);
+  --jf-scrollbar-thumb-hover: var(--jf-text-soft);
+  background:
+    radial-gradient(circle at 7% 2%, rgba(59, 119, 104, .065), transparent 24rem),
+    radial-gradient(circle at 96% 28%, rgba(197, 166, 106, .055), transparent 26rem),
+    var(--jf-bg);
+  color: var(--jf-text);
+  font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.dark .jf-studio {
+  --jf-bg: #111311;
+  --jf-panel: #191c19;
+  --jf-panel-muted: #202420;
+  --jf-border: #30352f;
+  --jf-border-strong: #454b44;
+  --jf-text: #f0f0eb;
+  --jf-text-muted: #b2b8b1;
+  --jf-text-soft: #7e857d;
+  --jf-primary: #75b9a8;
+  --jf-primary-strong: #a6d8ca;
+  --jf-primary-soft: rgba(84, 156, 137, .17);
+  --jf-studio-black: #edf0ea;
+  --jf-control-active: #3f4540;
+  --jf-control-active-text: #f0f0eb;
+  --jf-studio-sand: #d5b97e;
+  --jf-studio-shadow: 0 1px 2px rgba(0, 0, 0, .22), 0 18px 42px rgba(0, 0, 0, .15);
+  --jf-studio-shadow-hover: 0 2px 3px rgba(0, 0, 0, .25), 0 22px 48px rgba(0, 0, 0, .24);
+  --jf-table-surface: #171b17;
+  --jf-table-row: #1b1f1b;
+  --jf-table-row-alt: #1e231e;
+  --jf-table-head: #242a24;
+  --jf-table-border: rgba(157, 177, 163, .18);
+  --jf-table-hover: rgba(117, 185, 168, .10);
+  --jf-table-sticky-hover: #242e29;
+  --jf-table-sticky-selected: #25342e;
+  --jf-scrollbar-track: var(--jf-bg);
+  --jf-scrollbar-thumb: var(--jf-border-strong);
+  --jf-scrollbar-thumb-hover: var(--jf-text-soft);
+  background:
+    radial-gradient(circle at 8% 2%, rgba(91, 160, 142, .09), transparent 25rem),
+    radial-gradient(circle at 96% 28%, rgba(213, 185, 126, .055), transparent 26rem),
+    var(--jf-bg);
+}
+
+/* Application chrome */
+.jf-studio .jf-cloud-chrome {
+  border-color: rgba(67, 75, 68, .12);
+  background: rgba(251, 250, 246, .88);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .82);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+.dark .jf-studio .jf-cloud-chrome {
+  background: rgba(17, 19, 17, .9);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+.jf-studio .jf-cloud-header {
+  border-bottom-color: rgba(67, 75, 68, .1);
+}
+
+.jf-studio .jf-cloud-brand__logo,
+.jf-studio .jf-workspace-drawer__logo {
+  border: 1px solid rgba(37, 108, 96, .18);
+  border-radius: 11px;
+  background: #f7faf8;
+  box-shadow: 0 5px 14px rgba(37, 74, 63, .07);
+}
+
+.dark .jf-studio .jf-cloud-brand__logo,
+.dark .jf-studio .jf-workspace-drawer__logo {
+  background: #202a25;
+}
+
+.jf-studio .jf-cloud-brand__text {
+  color: var(--jf-text);
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+
+.jf-studio .jf-cloud-shortcut,
+.jf-studio .jf-cloud-icon-link,
+.jf-studio .jf-cloud-user-button,
+.jf-studio .jf-cloud-balance {
+  border-radius: 999px;
+  font-weight: 650;
+}
+
+.jf-studio .jf-cloud-shortcut {
+  border-color: rgba(67, 75, 68, .11);
+  background: rgba(255, 255, 255, .68);
+  padding-inline: 13px;
+}
+
+.dark .jf-studio .jf-cloud-shortcut {
+  border-color: rgba(230, 238, 231, .08);
+  background: rgba(31, 35, 31, .72);
+}
+
+.jf-studio .jf-cloud-shortcut:hover,
+.jf-studio .jf-cloud-icon-link:hover,
+.jf-studio .jf-cloud-user-button:hover {
+  border-color: rgba(37, 108, 96, .2);
+  background: var(--jf-panel);
+  color: var(--jf-primary-strong);
+}
+
+.jf-studio .jf-cloud-balance {
+  border-color: rgba(37, 108, 96, .2);
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary-strong);
+}
+
+.jf-studio .jf-cloud-user-button__avatar {
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2c7467, #183d36);
+  box-shadow: 0 0 0 3px rgba(37, 108, 96, .1);
+}
+
+.jf-studio .jf-cloud-region-notice {
+  border-color: rgba(173, 132, 58, .24);
+  border-radius: 999px;
+  background: rgba(252, 246, 232, .86);
+  color: #916516;
+}
+
+.dark .jf-studio .jf-cloud-region-notice {
+  border-color: rgba(213, 185, 126, .18);
+  background: rgba(112, 83, 31, .17);
+  color: #d9bc7c;
+}
+
+.jf-studio .jf-workspace-nav__inner {
+  padding-block: 9px;
+}
+
+.jf-studio .jf-workspace-chip {
+  min-height: 36px;
+  border-radius: 999px;
+  padding-inline: 13px;
+  font-weight: 650;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .jf-studio .jf-workspace-chip:hover {
+    border-color: rgba(67, 75, 68, .12);
+    background: rgba(255, 255, 255, .72);
+  }
+
+  .dark .jf-studio .jf-workspace-chip:hover {
+    border-color: rgba(230, 238, 231, .1);
+    background: rgba(32, 36, 32, .88);
+  }
+}
+
+.jf-studio .jf-workspace-chip.jf-workspace-chip--active {
+  border-color: var(--jf-control-active);
+  background: var(--jf-control-active);
+  color: var(--jf-control-active-text);
+  box-shadow: 0 8px 20px rgba(17, 20, 17, .13);
+  transition: none;
+}
+
+.dark .jf-studio .jf-workspace-chip.jf-workspace-chip--active {
+  border-color: var(--jf-control-active);
+  background: var(--jf-control-active);
+  color: var(--jf-control-active-text);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
+}
+
+.jf-studio .jf-workspace-popover {
+  border-radius: 16px;
+  padding: 7px;
+  box-shadow: 0 20px 55px rgba(30, 38, 32, .14);
+}
+
+.jf-studio .jf-workspace-popover__link {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.jf-studio .jf-workspace-popover__link--active {
+  border-color: transparent;
+  background: var(--jf-primary-soft);
+  color: var(--jf-primary-strong);
+}
+
+/* Editorial page heading */
+.jf-studio .jf-cloud-main {
+  padding: 30px clamp(18px, 2.4vw, 42px) 48px;
+}
+
+.jf-workspace-heading {
+  display: flex;
+  width: min(100%, 1760px);
+  min-height: 102px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 0 auto 24px;
+  padding: 0 2px 22px;
+  border-bottom: 1px solid rgba(67, 75, 68, .12);
+}
+
+.jf-workspace-heading__copy {
+  min-width: 0;
+}
+
+.jf-workspace-heading__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  color: var(--jf-primary);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.jf-workspace-heading__title {
+  margin: 0;
+  color: var(--jf-text);
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: clamp(27px, 2.2vw, 40px);
+  font-weight: 900;
+  letter-spacing: -.035em;
+  line-height: 1.14;
+}
+
+:lang(zh) .jf-workspace-heading__title {
+  letter-spacing: -.01em;
+}
+
+.jf-workspace-heading__description {
+  max-width: 720px;
+  margin: 9px 0 0;
+  color: var(--jf-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.jf-workspace-heading__signature {
+  display: grid;
+  flex: 0 0 auto;
+  justify-items: end;
+  gap: 3px;
+  padding-bottom: 2px;
+}
+
+.jf-workspace-heading__signature span {
+  color: var(--jf-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.jf-workspace-heading__signature small {
+  color: var(--jf-text-soft);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 11px;
+  letter-spacing: .05em;
+}
+
+/* Surfaces and hierarchy */
+.jf-studio .jf-cloud-page-frame {
+  width: min(100%, 1760px);
+}
+
+.jf-studio .jf-cloud-page-frame > :where(.space-y-4, .space-y-5, .space-y-6, .space-y-8) {
+  gap: 22px !important;
+}
+
+.jf-studio.jf-cloud-shell :where(.card, .glass-card, .card-glass, .stat-card, .table-scroll-container, .modal-content, .dialog-container, .dropdown) {
+  border: 1px solid var(--jf-border) !important;
+  border-radius: 18px !important;
+  background: var(--jf-panel) !important;
+  box-shadow: var(--jf-studio-shadow) !important;
+}
+
+.dark .jf-studio.jf-cloud-shell :where(.card, .glass-card, .card-glass, .stat-card, .table-scroll-container, .modal-content, .dialog-container, .dropdown) {
+  box-shadow: var(--jf-studio-shadow) !important;
+}
+
+.jf-studio.jf-cloud-shell :where(.card, .glass-card, .card-glass, .stat-card) {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+@media (hover: hover) {
+  .jf-studio.jf-cloud-shell :where(.card, .glass-card, .card-glass, .stat-card):hover {
+    border-color: var(--jf-border-strong) !important;
+    box-shadow: var(--jf-studio-shadow-hover) !important;
+  }
+}
+
+.jf-studio .stat-card,
+.jf-studio .grid > .card.p-4:has(> .flex.items-center.gap-3) {
+  position: relative;
+  min-height: 112px;
+  overflow: hidden;
+  padding: 20px !important;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .96), rgba(249, 248, 243, .92)),
+    var(--jf-panel) !important;
+}
+
+.dark .jf-studio .stat-card,
+.dark .jf-studio .grid > .card.p-4:has(> .flex.items-center.gap-3) {
+  background:
+    linear-gradient(145deg, rgba(37, 42, 37, .85), rgba(24, 28, 24, .96)),
+    var(--jf-panel) !important;
+}
+
+.jf-studio .stat-card::after,
+.jf-studio .grid > .card.p-4:has(> .flex.items-center.gap-3)::after {
+  position: absolute;
+  top: -32px;
+  right: -28px;
+  width: 108px;
+  height: 108px;
+  border: 1px solid rgba(37, 108, 96, .09);
+  border-radius: 50%;
+  background: rgba(37, 108, 96, .035);
+  content: "";
+  pointer-events: none;
+}
+
+.jf-studio .stat-icon,
+.jf-studio .grid > .card.p-4 > .flex > :first-child[class*="rounded"] {
+  display: inline-flex;
+  width: 42px !important;
+  height: 42px !important;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(37, 108, 96, .12);
+  border-radius: 13px !important;
+  background: var(--jf-primary-soft) !important;
+  color: var(--jf-primary) !important;
+}
+
+.jf-studio .stat-value,
+.jf-studio .grid > .card.p-4 .text-xl.font-bold,
+.jf-studio .grid > .card.p-4 .text-2xl.font-bold,
+.jf-studio .grid > .card.p-4 .text-3xl.font-bold {
+  color: var(--jf-text) !important;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700 !important;
+  letter-spacing: -.025em;
+}
+
+.jf-studio .card > h2,
+.jf-studio .card > h3,
+.jf-studio .card > .card-header h2,
+.jf-studio .card > .card-header h3,
+.jf-studio .page-header h2,
+.jf-studio .page-header h3,
+.jf-studio .page-title {
+  color: var(--jf-text) !important;
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-weight: 850 !important;
+  letter-spacing: -.015em;
+}
+
+.jf-studio.jf-cloud-shell :where(.card-header, .card-footer, .page-header) {
+  border-color: var(--jf-border) !important;
+}
+
+/* Controls */
+.jf-studio.jf-cloud-shell :where(.btn, .btn-primary, .btn-secondary, .btn-ghost, .btn-danger, .btn-success, .btn-warning) {
+  min-height: 38px;
+  border-radius: 999px !important;
+  padding-inline: 16px !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+.jf-studio .btn-primary {
+  border-color: var(--jf-studio-black) !important;
+  background: var(--jf-studio-black) !important;
+  color: var(--jf-panel) !important;
+  box-shadow: 0 8px 18px rgba(17, 20, 17, .13) !important;
+}
+
+.dark .jf-studio .btn-primary {
+  color: #171916 !important;
+}
+
+.jf-studio .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(.92);
+}
+
+.jf-studio.jf-cloud-shell :where(.btn-secondary, .btn-ghost) {
+  border-color: var(--jf-border) !important;
+  background: var(--jf-panel) !important;
+  color: var(--jf-text) !important;
+}
+
+.jf-studio.jf-cloud-shell :where(.btn-secondary, .btn-ghost):hover:not(:disabled) {
+  border-color: var(--jf-border-strong) !important;
+  background: var(--jf-panel-muted) !important;
+}
+
+.jf-studio .btn-icon {
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+}
+
+.jf-studio .btn-sm {
+  min-height: 34px;
+  padding-inline: 12px !important;
+  font-size: 12px !important;
+}
+
+.jf-studio .btn-sm.btn-icon {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+}
+
+.jf-studio.jf-saas-shell .input,
+.jf-studio.jf-saas-shell input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='button']):not([type='submit']):not([type='file']):not([type='color']),
+.jf-studio.jf-saas-shell select,
+.jf-studio.jf-saas-shell textarea,
+.jf-studio.jf-saas-shell .select-trigger {
+  min-height: 40px;
+  border-color: var(--jf-border) !important;
+  border-radius: 11px !important;
+  background: #fbfaf7 !important;
+  color: var(--jf-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+}
+
+.jf-studio.jf-saas-shell textarea {
+  min-height: 88px;
+}
+
+.dark .jf-studio.jf-saas-shell .input,
+.dark .jf-studio.jf-saas-shell input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='button']):not([type='submit']):not([type='file']):not([type='color']),
+.dark .jf-studio.jf-saas-shell select,
+.dark .jf-studio.jf-saas-shell textarea,
+.dark .jf-studio.jf-saas-shell .select-trigger {
+  background: #151815 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025) !important;
+}
+
+.jf-studio.jf-saas-shell .input:focus,
+.jf-studio.jf-saas-shell input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='button']):not([type='submit']):not([type='file']):not([type='color']):focus,
+.jf-studio.jf-saas-shell select:focus,
+.jf-studio.jf-saas-shell textarea:focus,
+.jf-studio.jf-saas-shell .select-trigger:focus {
+  border-color: rgba(37, 108, 96, .55) !important;
+  box-shadow: 0 0 0 4px rgba(37, 108, 96, .09) !important;
+}
+
+.jf-studio .tabs {
+  border: 1px solid var(--jf-border);
+  border-radius: 999px !important;
+  background: var(--jf-panel-muted) !important;
+  padding: 4px !important;
+}
+
+.jf-studio .tab {
+  border-radius: 999px !important;
+  font-weight: 650;
+}
+
+.jf-studio .tab-active {
+  border-color: var(--jf-control-active) !important;
+  background: var(--jf-control-active) !important;
+  color: var(--jf-control-active-text) !important;
+  box-shadow: 0 4px 14px rgba(30, 38, 32, .08);
+}
+
+.jf-studio .tab-active :where(svg, span) {
+  color: inherit !important;
+}
+
+.jf-studio .badge {
+  border-radius: 999px !important;
+  font-weight: 750;
+}
+
+/* Tables */
+.jf-studio .table-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 18px !important;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--jf-scrollbar-thumb) var(--jf-scrollbar-track);
+  -webkit-overflow-scrolling: touch;
+}
+
+.jf-studio .table-container::-webkit-scrollbar {
+  height: 6px;
+  background-color: var(--jf-scrollbar-track);
+}
+
+.jf-studio .table-container::-webkit-scrollbar-track {
+  background-color: var(--jf-scrollbar-track);
+}
+
+.jf-studio .table-container::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: var(--jf-scrollbar-thumb);
+}
+
+.jf-studio .table-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--jf-scrollbar-thumb-hover);
+}
+
+.jf-studio .table-container::-webkit-scrollbar-corner {
+  background-color: var(--jf-scrollbar-track);
+}
+
+.jf-studio :where(button, a[href], [role='button']):focus-visible {
+  outline: 2px solid rgba(19, 156, 137, .75);
+  outline-offset: 2px;
+}
+
+.jf-studio.jf-cloud-shell table thead,
+.jf-studio.jf-cloud-shell table thead tr,
+.jf-studio.jf-cloud-shell table thead th,
+.jf-studio.jf-cloud-shell .table-scroll-container thead,
+.jf-studio.jf-cloud-shell .table-wrapper .table-header,
+.jf-studio.jf-cloud-shell .table-wrapper .sticky-header-cell {
+  background: var(--jf-table-head) !important;
+}
+
+.dark .jf-studio.jf-cloud-shell table thead,
+.dark .jf-studio.jf-cloud-shell table thead tr,
+.dark .jf-studio.jf-cloud-shell table thead th,
+.dark .jf-studio.jf-cloud-shell .table-scroll-container thead,
+.dark .jf-studio.jf-cloud-shell .table-wrapper .table-header,
+.dark .jf-studio.jf-cloud-shell .table-wrapper .sticky-header-cell {
+  background: var(--jf-table-head) !important;
+}
+
+/*
+ * Tables use a slightly warmer surface than the page canvas.  A number of
+ * shared table components still carry Tailwind's white/gray utility classes,
+ * so these scoped rules keep every table in the Jiufeng workspace on the same
+ * warm-neutral palette without changing the shared application components.
+ */
+.jf-studio.jf-cloud-shell :where(.table-scroll-container, .table-container) {
+  background: var(--jf-table-surface) !important;
+  border-color: var(--jf-border) !important;
+}
+
+.jf-studio.jf-cloud-shell :where(.table-scroll-container, .table-container) .table-wrapper,
+.jf-studio.jf-cloud-shell .table-wrapper {
+  background: var(--jf-table-surface) !important;
+}
+
+.jf-studio.jf-cloud-shell table {
+  background: transparent !important;
+}
+
+.jf-studio.jf-cloud-shell table tbody,
+.jf-studio.jf-cloud-shell .table-wrapper .table-body {
+  background: var(--jf-table-surface) !important;
+}
+
+.jf-studio.jf-cloud-shell table tbody tr:not(:is(
+  [class*='bg-primary'],
+  [class*='bg-red'],
+  [class*='bg-rose'],
+  [class*='bg-amber'],
+  [class*='bg-yellow'],
+  [class*='bg-emerald'],
+  [class*='bg-green']
+)) {
+  background: var(--jf-table-row) !important;
+}
+
+.jf-studio.jf-cloud-shell table tbody tr:nth-child(even):not(:is(
+  [class*='bg-primary'],
+  [class*='bg-red'],
+  [class*='bg-rose'],
+  [class*='bg-amber'],
+  [class*='bg-yellow'],
+  [class*='bg-emerald'],
+  [class*='bg-green']
+)) {
+  background: var(--jf-table-row-alt) !important;
+}
+
+.jf-studio.jf-cloud-shell table tbody tr:not(:is(
+  [class*='bg-primary'],
+  [class*='bg-red'],
+  [class*='bg-rose'],
+  [class*='bg-amber'],
+  [class*='bg-yellow'],
+  [class*='bg-emerald'],
+  [class*='bg-green']
+)):hover,
+.jf-studio.jf-cloud-shell .table tbody tr:not(:is(
+  [class*='bg-primary'],
+  [class*='bg-red'],
+  [class*='bg-rose'],
+  [class*='bg-amber'],
+  [class*='bg-yellow'],
+  [class*='bg-emerald'],
+  [class*='bg-green']
+)):hover {
+  background: var(--jf-table-hover) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper tbody .sticky-col {
+  background: var(--jf-table-row) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper tbody tr:nth-child(even):not([class*='bg-primary']) .sticky-col {
+  background: var(--jf-table-row-alt) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper tbody tr:not(:is(
+  [class*='bg-primary'],
+  [class*='bg-red'],
+  [class*='bg-rose'],
+  [class*='bg-amber'],
+  [class*='bg-yellow'],
+  [class*='bg-emerald'],
+  [class*='bg-green']
+)):hover .sticky-col {
+  background: var(--jf-table-sticky-hover) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper tbody tr[class*='bg-primary'] .sticky-col {
+  background: var(--jf-table-sticky-selected) !important;
+}
+
+.jf-studio.jf-cloud-shell table th,
+.jf-studio.jf-cloud-shell .table th,
+.jf-studio.jf-cloud-shell .table-scroll-container th {
+  height: 46px !important;
+  border-bottom-color: var(--jf-border) !important;
+  color: var(--jf-text-muted) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .035em;
+}
+
+.jf-studio.jf-cloud-shell table td,
+.jf-studio.jf-cloud-shell .table td,
+.jf-studio.jf-cloud-shell .table-scroll-container td {
+  height: 52px !important;
+  border-bottom-color: var(--jf-table-border) !important;
+}
+
+.jf-studio.jf-cloud-shell table tbody tr,
+.jf-studio.jf-cloud-shell .table tbody tr {
+  transition: background-color 140ms ease;
+}
+
+/* DataTable's mobile representation is a stack of cards rather than a
+   native table. Keep those cards on the same surface as desktop tables. */
+.jf-studio.jf-cloud-shell .jf-data-table-mobile > :where(.rounded-lg):not([class*='bg-primary']),
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .space-y-3 > .rounded-lg.border[class*='bg-white']:not([class*='bg-primary']) {
+  border-color: var(--jf-table-border) !important;
+  background: var(--jf-table-row) !important;
+  box-shadow: 0 1px 2px rgba(31, 36, 31, .025) !important;
+}
+
+.dark .jf-studio.jf-cloud-shell .jf-data-table-mobile > :where(.rounded-lg):not([class*='bg-primary']),
+.dark .jf-studio.jf-cloud-shell .jf-cloud-page-frame .space-y-3 > .rounded-lg.border[class*='bg-white']:not([class*='bg-primary']) {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .18) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-data-table-mobile > [class*='bg-primary'],
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .space-y-3 > .rounded-lg.border[class*='bg-primary'] {
+  border-color: rgba(37, 108, 96, .32) !important;
+  background: var(--jf-primary-soft) !important;
+}
+
+/* The shared bulk bar uses a bright primary tint by default. On the account
+   workspace it belongs to the table surface, so keep jade for text/actions. */
+.jf-studio .jf-account-bulk-bar {
+  border: 1px solid var(--jf-border) !important;
+  background: var(--jf-panel-muted) !important;
+  color: var(--jf-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.dark .jf-studio .jf-account-bulk-bar {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+.jf-studio .jf-account-bulk-bar :is(
+  [class*='text-primary-900'],
+  [class*='text-primary-800'],
+  [class*='text-primary-700'],
+  [class*='text-primary-300'],
+  [class*='text-primary-200'],
+  [class*='text-primary-100']
+) {
+  color: var(--jf-primary-strong) !important;
+}
+
+/* Keep the account filters and actions in their intended left-to-right order
+   on desktop. The shared controls can shrink slightly at the boundary instead
+   of moving the entire action group above the filters. */
+@media (min-width: 1280px) {
+  .jf-studio .jf-account-toolbar {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .jf-studio .jf-account-table-filters {
+    min-width: 0;
+    flex: 1 1 auto;
+    flex-wrap: nowrap !important;
+    gap: clamp(7px, .65vw, 12px) !important;
+  }
+
+  .jf-studio .jf-account-table-filters > * {
+    min-width: 0;
+  }
+
+  .jf-studio .jf-account-table-filters > :first-child {
+    width: clamp(180px, 16vw, 256px) !important;
+    flex: 1.25 1 180px;
+  }
+
+  .jf-studio .jf-account-table-filters > :not(:first-child) {
+    width: clamp(110px, 9vw, 160px) !important;
+    flex: 1 1 110px;
+  }
+
+  .jf-studio .jf-account-table-actions {
+    flex: 0 0 auto;
+    flex-wrap: nowrap !important;
+    gap: clamp(7px, .65vw, 12px) !important;
+    white-space: nowrap;
+  }
+}
+
+/* Pagination is rendered beside the table card by the shared component. It
+   should read as part of the same warm table surface instead of a detached
+   white strip. */
+.jf-studio.jf-cloud-shell .jf-table-page-layout__section:has(nav[aria-label='Pagination']) > div {
+  border-top-color: var(--jf-border) !important;
+  background: var(--jf-table-surface) !important;
+  color: var(--jf-text-muted) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .flex.items-center.justify-between.border-t:has(nav[aria-label='Pagination']) {
+  border-top-color: var(--jf-border) !important;
+  background: var(--jf-table-surface) !important;
+  color: var(--jf-text-muted) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-table-page-layout__section:has(nav[aria-label='Pagination']) button {
+  border-color: var(--jf-border) !important;
+  background: var(--jf-table-row) !important;
+  color: var(--jf-text-muted) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .flex.items-center.justify-between.border-t:has(nav[aria-label='Pagination']) button {
+  border-color: var(--jf-border) !important;
+  background: var(--jf-table-row) !important;
+  color: var(--jf-text-muted) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-table-page-layout__section:has(nav[aria-label='Pagination']) button:hover:not(:disabled) {
+  background: var(--jf-table-hover) !important;
+  color: var(--jf-text) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .flex.items-center.justify-between.border-t:has(nav[aria-label='Pagination']) button:hover:not(:disabled) {
+  background: var(--jf-table-hover) !important;
+  color: var(--jf-text) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-table-page-layout__section:has(nav[aria-label='Pagination']) button[aria-current='page'] {
+  border-color: var(--jf-control-active) !important;
+  background: var(--jf-control-active) !important;
+  color: var(--jf-control-active-text) !important;
+}
+
+.jf-studio.jf-cloud-shell .jf-cloud-page-frame .flex.items-center.justify-between.border-t:has(nav[aria-label='Pagination']) button[aria-current='page'] {
+  border-color: var(--jf-control-active) !important;
+  background: var(--jf-control-active) !important;
+  color: var(--jf-control-active-text) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-track {
+  background: var(--jf-scrollbar-track) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-thumb {
+  border: 2px solid transparent !important;
+  border-radius: 999px !important;
+  background-color: var(--jf-scrollbar-thumb) !important;
+  background-clip: padding-box !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: var(--jf-scrollbar-thumb-hover) !important;
+}
+
+.dark .jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-track {
+  background: var(--jf-scrollbar-track) !important;
+}
+
+.dark .jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--jf-scrollbar-thumb) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar-corner,
+.jf-studio.jf-cloud-shell .table-wrapper::-webkit-scrollbar {
+  background-color: var(--jf-scrollbar-track) !important;
+}
+
+.jf-studio.jf-cloud-shell .table-wrapper {
+  scrollbar-color: var(--jf-scrollbar-thumb) var(--jf-scrollbar-track) !important;
+}
+
+/* Charts */
+.jf-studio .jf-chart-palette canvas {
+  filter: saturate(.86) contrast(.98);
+}
+
+.jf-studio .jf-chart-palette .card:has(canvas) {
+  padding: 20px !important;
+}
+
+.jf-studio .jf-chart-palette .card:has(canvas) h3 {
+  font-size: 16px !important;
+}
+
+.jf-studio .card.jf-chart-palette:has(canvas),
+.jf-studio .jf-chart-palette .card:has(canvas) {
+  background:
+    radial-gradient(circle at 96% 4%, rgba(37, 108, 96, .055), transparent 15rem),
+    var(--jf-panel) !important;
+}
+
+/* Half-width analytics cards need a little more room for their amount
+   columns. The shared chart keeps its full size on wide screens. */
+@media (min-width: 1024px) and (max-width: 1535px) {
+  .jf-studio .jf-chart-palette .card .h-48.w-48.shrink-0 {
+    width: 9rem !important;
+    height: 9rem !important;
+  }
+}
+
+/* Keep status and warning cards semantic. */
+.jf-studio .card[class*="bg-red-"],
+.jf-studio .stat-card[class*="bg-red-"] {
+  background: rgba(185, 73, 67, .1) !important;
+}
+
+.jf-studio .card[class*="bg-amber-"],
+.jf-studio .card[class*="bg-yellow-"],
+.jf-studio .stat-card[class*="bg-amber-"],
+.jf-studio .stat-card[class*="bg-yellow-"] {
+  background: rgba(197, 166, 106, .13) !important;
+}
+
+.jf-studio .card[class*="bg-emerald-"],
+.jf-studio .card[class*="bg-green-"],
+.jf-studio .stat-card[class*="bg-emerald-"],
+.jf-studio .stat-card[class*="bg-green-"] {
+  background: rgba(52, 117, 104, .1) !important;
+}
+
+.jf-studio .card[class*="bg-primary-"],
+.jf-studio .stat-card[class*="bg-primary-"] {
+  background: var(--jf-primary-soft) !important;
+}
+
+/* Existing custom page surfaces */
+.jf-studio.jf-cloud-shell :where(.profile-hero, .redeem-hero, .metric-card, .monitor-toolbar, .settings-tabs-shell) {
+  border-color: var(--jf-border) !important;
+  background-color: var(--jf-panel) !important;
+  box-shadow: var(--jf-studio-shadow) !important;
+}
+
+.jf-studio :where(.profile-hero, .redeem-hero) {
+  border-radius: 20px !important;
+}
+
+.jf-studio .jf-risk-center > .flex h1 {
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: clamp(27px, 2.2vw, 38px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.01em !important;
+}
+
+.jf-studio .jf-monitor-v1 > section:first-child,
+.jf-studio .jf-monitor-v1 > section:first-child + div {
+  border: 1px solid var(--jf-border);
+  border-radius: 18px;
+  background: var(--jf-panel);
+  box-shadow: var(--jf-studio-shadow);
+}
+
+.jf-studio .jf-monitor-v1 > section:first-child {
+  padding: 14px 18px;
+}
+
+.jf-studio .jf-monitor-v1 > section:first-child + div {
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+}
+
+.jf-studio .settings-tabs-shell {
+  border-radius: 999px !important;
+  background: rgba(255, 254, 250, .9) !important;
+}
+
+.dark .jf-studio .settings-tabs-shell {
+  background: rgba(25, 28, 25, .92) !important;
+}
+
+.jf-studio .settings-tab {
+  border-radius: 999px !important;
+}
+
+.jf-studio .settings-tab-active {
+  border-color: var(--jf-control-active) !important;
+  background: var(--jf-control-active) !important;
+  color: var(--jf-control-active-text) !important;
+  box-shadow: none !important;
+}
+
+.dark .jf-studio .settings-tab-active {
+  color: var(--jf-control-active-text) !important;
+}
+
+.jf-studio .settings-tab.settings-tab-active .settings-tab-icon {
+  background: rgba(255, 255, 255, .1) !important;
+  color: var(--jf-control-active-text) !important;
+}
+
+.jf-studio .jf-prompt-audit .tab-active {
+  border-color: var(--jf-control-active) !important;
+  background: var(--jf-control-active) !important;
+  color: var(--jf-control-active-text) !important;
+}
+
+@media (max-width: 1023px) {
+  .jf-studio .jf-cloud-main {
+    padding: 22px 14px 36px;
+  }
+
+  .jf-workspace-heading {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+  .jf-studio .jf-cloud-header__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .jf-studio .jf-cloud-header__center {
+    display: none;
+  }
+
+  .jf-studio .jf-cloud-header__right,
+  .jf-studio .jf-cloud-icon-link {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .jf-studio .jf-cloud-header__inner {
+    grid-template-columns: minmax(92px, 1fr) auto;
+    gap: 6px;
+  }
+
+  .jf-studio .jf-cloud-header__right {
+    gap: 6px;
+  }
+
+  .jf-studio .jf-cloud-brand {
+    min-width: 0;
+  }
+
+  .jf-studio .jf-cloud-brand__logo {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+  }
+
+  .jf-studio .jf-cloud-model-plaza,
+  .jf-studio .jf-cloud-subscription-mini {
+    display: none !important;
+  }
+
+  .jf-studio .jf-cloud-main {
+    padding: 18px 14px 30px;
+  }
+
+  .jf-studio .jf-workspace-chip {
+    min-height: 38px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .5);
+  }
+
+  .dark .jf-studio .jf-workspace-chip {
+    background: rgba(32, 36, 32, .62);
+  }
+
+  .jf-studio .jf-workspace-chip--active {
+    background: var(--jf-control-active);
+  }
+
+  .jf-studio .jf-cloud-page-frame > :where(.space-y-4, .space-y-5, .space-y-6, .space-y-8) {
+    gap: 14px !important;
+  }
+
+  .jf-studio.jf-cloud-shell :where(.card, .glass-card, .card-glass, .stat-card, .table-scroll-container) {
+    border-radius: 15px !important;
+  }
+
+  .jf-studio .stat-card,
+  .jf-studio .grid > .card.p-4:has(> .flex.items-center.gap-3) {
+    min-height: 100px;
+    padding: 15px !important;
+  }
+
+  .jf-studio :where(.jf-admin-dashboard, .jf-user-dashboard)
+    > .grid.grid-cols-2
+    + .grid.grid-cols-2
+    > .card:nth-child(-n + 2),
+  .jf-studio .jf-user-dashboard
+    > .grid.grid-cols-2:first-of-type
+    > .card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .jf-studio :where(.jf-admin-dashboard, .jf-user-dashboard)
+    > .grid
+    > .card
+    > .flex.items-center.gap-3
+    > :last-child {
+    min-width: 0;
+  }
+
+  .jf-studio .jf-chart-palette .card:has(canvas) {
+    padding: 16px !important;
+  }
+
+  .jf-studio .jf-monitor-v1 > section:first-child {
+    padding: 12px;
+  }
+
+  .jf-studio .jf-monitor-v1 > section:first-child + div {
+    min-height: 240px;
+    padding: 18px;
+  }
+
+  .jf-studio.jf-cloud-shell :where(.btn, .btn-primary, .btn-secondary, .btn-ghost) {
+    padding-inline: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jf-studio.jf-cloud-shell :where(.card, .stat-card, .btn) {
+    transition-duration: 1ms !important;
+  }
+}

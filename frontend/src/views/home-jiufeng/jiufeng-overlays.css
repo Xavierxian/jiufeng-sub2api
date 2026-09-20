@@ -1,0 +1,502 @@
+/* Teleported notifications and dialogs sit outside .jf-studio. This Jiufeng-only
+   stylesheet follows those surfaces to <body> without changing shared components. */
+:root {
+  --jf-overlay-panel: #fffefa;
+  --jf-overlay-panel-muted: #f5f4ef;
+  --jf-overlay-border: #e5e2da;
+  --jf-overlay-border-strong: #d3d0c7;
+  --jf-overlay-text: #171916;
+  --jf-overlay-muted: #686e68;
+  --jf-overlay-soft: #989c96;
+  --jf-overlay-primary: #256c60;
+  --jf-overlay-primary-strong: #174e46;
+  --jf-overlay-primary-soft: #e3efeb;
+  --jf-overlay-action: #10120f;
+  --jf-overlay-action-text: #fffefa;
+  --jf-overlay-control-active: #343834;
+  --jf-overlay-control-active-text: #fffefa;
+  --jf-scrollbar-track: var(--jf-overlay-panel-muted);
+  --jf-scrollbar-thumb: var(--jf-overlay-border-strong);
+  --jf-scrollbar-thumb-hover: var(--jf-overlay-soft);
+  --jf-overlay-shadow: 0 24px 70px rgba(27, 32, 27, .18), 0 3px 12px rgba(27, 32, 27, .08);
+}
+
+.dark {
+  --jf-overlay-panel: #191c19;
+  --jf-overlay-panel-muted: #202420;
+  --jf-overlay-border: #30352f;
+  --jf-overlay-border-strong: #454b44;
+  --jf-overlay-text: #f0f0eb;
+  --jf-overlay-muted: #b2b8b1;
+  --jf-overlay-soft: #7e857d;
+  --jf-overlay-primary: #75b9a8;
+  --jf-overlay-primary-strong: #a6d8ca;
+  --jf-overlay-primary-soft: rgba(84, 156, 137, .17);
+  --jf-overlay-action: #edf0ea;
+  --jf-overlay-action-text: #171916;
+  --jf-overlay-control-active: #3f4540;
+  --jf-overlay-control-active-text: #f0f0eb;
+  --jf-scrollbar-track: var(--jf-overlay-panel-muted);
+  --jf-scrollbar-thumb: var(--jf-overlay-border-strong);
+  --jf-scrollbar-thumb-hover: var(--jf-overlay-soft);
+  --jf-overlay-shadow: 0 28px 80px rgba(0, 0, 0, .46), 0 3px 14px rgba(0, 0, 0, .28);
+}
+
+/* Nested horizontal/vertical scrollers, dropdowns, and teleported dialogs use
+   Jiufeng's warm background and neutral border palette instead of jade. */
+:root,
+:root body,
+:root body * {
+  scrollbar-color: var(--jf-scrollbar-thumb) var(--jf-scrollbar-track) !important;
+}
+
+:root::-webkit-scrollbar,
+:root body::-webkit-scrollbar,
+:root body *::-webkit-scrollbar {
+  background-color: var(--jf-scrollbar-track) !important;
+}
+
+:root::-webkit-scrollbar-track,
+:root body::-webkit-scrollbar-track,
+:root body *::-webkit-scrollbar-track {
+  border-radius: 999px !important;
+  background-color: var(--jf-scrollbar-track) !important;
+}
+
+:root::-webkit-scrollbar-thumb,
+:root body::-webkit-scrollbar-thumb,
+:root body *::-webkit-scrollbar-thumb {
+  border: 2px solid transparent !important;
+  border-radius: 999px !important;
+  background-color: var(--jf-scrollbar-thumb) !important;
+  background-clip: padding-box !important;
+}
+
+:root::-webkit-scrollbar-thumb:hover,
+:root body::-webkit-scrollbar-thumb:hover,
+:root body *::-webkit-scrollbar-thumb:hover {
+  background-color: var(--jf-scrollbar-thumb-hover) !important;
+}
+
+:root::-webkit-scrollbar-corner,
+:root body::-webkit-scrollbar-corner,
+:root body *::-webkit-scrollbar-corner {
+  background-color: var(--jf-scrollbar-track) !important;
+}
+
+/* Hide only the document viewport scrollbar. Scrolling remains enabled, and
+   nested table/dialog scrollbars stay visible through the rules above. */
+:root,
+:root body {
+  -ms-overflow-style: none;
+  scrollbar-width: none !important;
+}
+
+:root::-webkit-scrollbar,
+:root body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Global toast container rendered by components/common/Toast.vue. */
+body > [aria-live='polite'][aria-atomic='true'] {
+  top: 18px !important;
+  right: 18px !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div {
+  --jf-toast-accent: var(--jf-overlay-primary);
+  border: 1px solid var(--jf-overlay-border) !important;
+  border-left: 4px solid var(--jf-toast-accent) !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--jf-overlay-panel) 96%, transparent) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: 0 16px 42px rgba(27, 32, 27, .15), 0 2px 8px rgba(27, 32, 27, .07) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+.dark body > [aria-live='polite'][aria-atomic='true'] > div {
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .42), 0 2px 9px rgba(0, 0, 0, .24) !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > .border-red-500 {
+  --jf-toast-accent: #b94a43;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > .border-yellow-500 {
+  --jf-toast-accent: #aa7929;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > .border-blue-500 {
+  --jf-toast-accent: #527080;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div > .p-4 {
+  padding: 14px 15px !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div p {
+  color: var(--jf-overlay-text) !important;
+  letter-spacing: 0;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div p.font-semibold {
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-weight: 800 !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div :is(
+  [class~='text-green-500'],
+  [class~='text-red-500'],
+  [class~='text-yellow-500'],
+  [class~='text-blue-500']
+) {
+  color: var(--jf-toast-accent) !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] [aria-label='Close notification'] {
+  border-radius: 6px !important;
+  color: var(--jf-overlay-soft) !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] [aria-label='Close notification']:hover {
+  background: var(--jf-overlay-panel-muted) !important;
+  color: var(--jf-overlay-text) !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div > .h-1 {
+  background: var(--jf-overlay-panel-muted) !important;
+}
+
+body > [aria-live='polite'][aria-atomic='true'] > div > .h-1 > div {
+  background: var(--jf-toast-accent) !important;
+}
+
+/* BaseDialog surfaces, including account create/edit/test dialogs. */
+.modal-overlay {
+  background: rgba(11, 15, 12, .56) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(90%) !important;
+  backdrop-filter: blur(7px) saturate(90%) !important;
+}
+
+.modal-content {
+  border: 1px solid var(--jf-overlay-border) !important;
+  border-radius: 14px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: var(--jf-overlay-shadow) !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--jf-overlay-border) !important;
+}
+
+.modal-header {
+  min-height: 64px;
+  padding: 16px 22px !important;
+}
+
+.modal-title {
+  color: var(--jf-overlay-text) !important;
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0;
+}
+
+.modal-header [aria-label='Close modal'] {
+  border-radius: 8px !important;
+  color: var(--jf-overlay-soft) !important;
+}
+
+.modal-header [aria-label='Close modal']:hover {
+  background: var(--jf-overlay-panel-muted) !important;
+  color: var(--jf-overlay-text) !important;
+}
+
+.modal-body {
+  padding: 20px 22px !important;
+}
+
+.modal-footer {
+  min-height: 64px;
+  padding: 14px 22px !important;
+  background: color-mix(in srgb, var(--jf-overlay-panel-muted) 58%, var(--jf-overlay-panel));
+}
+
+.modal-content :is(.select-trigger, input:not([type='checkbox']):not([type='radio']):not([type='range']), select, textarea) {
+  border-color: var(--jf-overlay-border-strong) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: none !important;
+}
+
+.modal-content :is(.select-trigger, input, select, textarea):focus {
+  border-color: var(--jf-overlay-primary) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--jf-overlay-primary) 16%, transparent) !important;
+}
+
+.modal-content :is(.select-value, label, [class~='text-gray-900'], [class~='dark:text-gray-100']) {
+  color: var(--jf-overlay-text) !important;
+}
+
+.modal-content :is(
+  [class~='text-gray-700'],
+  [class~='text-gray-600'],
+  [class~='dark:text-gray-300'],
+  [class~='dark:text-gray-400']
+) {
+  color: var(--jf-overlay-muted) !important;
+}
+
+.modal-content :is([class~='text-gray-500'], [class~='text-gray-400']) {
+  color: var(--jf-overlay-soft) !important;
+}
+
+.modal-content :is(.tab-active, .settings-tab-active, .channel-tab-active) {
+  border-color: var(--jf-overlay-control-active) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-control-active) !important;
+  color: var(--jf-overlay-control-active-text) !important;
+  box-shadow: none !important;
+}
+
+.modal-content :is(.tab-active, .settings-tab-active, .channel-tab-active) :where(svg, span) {
+  color: inherit !important;
+}
+
+.modal-footer :is(.btn-primary, button[class*='bg-primary-']):not(:disabled) {
+  border-color: var(--jf-overlay-action) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-action) !important;
+  color: var(--jf-overlay-action-text) !important;
+  box-shadow: none !important;
+}
+
+.modal-footer :is(.btn-primary, button[class*='bg-primary-']):disabled {
+  border-color: var(--jf-overlay-border-strong) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel-muted) !important;
+  color: var(--jf-overlay-soft) !important;
+  box-shadow: none !important;
+}
+
+.modal-footer :is(.btn-secondary, .btn-ghost),
+.modal-footer button:not([class*='bg-red-']):not([class*='bg-green-']):not([class*='bg-orange-']):not([class*='bg-primary-']) {
+  border: 1px solid var(--jf-overlay-border-strong) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: none !important;
+}
+
+.modal-footer :is(.btn-secondary, .btn-ghost):hover:not(:disabled),
+.modal-footer button:not([class*='bg-red-']):not([class*='bg-green-']):not([class*='bg-orange-']):not([class*='bg-primary-']):hover:not(:disabled) {
+  background: var(--jf-overlay-panel-muted) !important;
+}
+
+/* AnnouncementBell renders its list and detail as custom teleported surfaces. */
+body > [class~='z-[100]']:has(> [class~='max-w-[620px]']),
+body > [class~='z-[110]']:has(> [class~='max-w-[780px]']) {
+  background: rgba(11, 15, 12, .56) !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: blur(7px) saturate(90%) !important;
+  backdrop-filter: blur(7px) saturate(90%) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'],
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] {
+  border: 1px solid var(--jf-overlay-border) !important;
+  border-radius: 14px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: var(--jf-overlay-shadow) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] > :first-child,
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :first-child {
+  border-color: var(--jf-overlay-border) !important;
+  background: color-mix(in srgb, var(--jf-overlay-panel-muted) 62%, var(--jf-overlay-panel)) !important;
+  background-image: none !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] > :first-child > [class~='absolute'],
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :first-child > [class~='absolute'] {
+  display: none !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] h2,
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] h2 {
+  color: var(--jf-overlay-text) !important;
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-weight: 900 !important;
+  letter-spacing: 0;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] > :first-child button:last-child,
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :first-child button:last-child {
+  border: 1px solid var(--jf-overlay-border) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-soft) !important;
+  box-shadow: none !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] > :first-child button:not(:last-child),
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :last-child button:last-child {
+  border-color: var(--jf-overlay-action) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-action) !important;
+  background-image: none !important;
+  color: var(--jf-overlay-action-text) !important;
+  box-shadow: none !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] > :nth-child(2),
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :nth-child(2) {
+  background: var(--jf-overlay-panel) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] .group {
+  border-color: var(--jf-overlay-border) !important;
+  background: var(--jf-overlay-panel) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] .group:hover {
+  background: var(--jf-overlay-panel-muted) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] .group[class*='bg-blue-'] {
+  background: var(--jf-overlay-primary-soft) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] :is(h3, p),
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] :is(h3, p) {
+  color: var(--jf-overlay-text) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] :is(time, [class*='text-gray-']),
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] :is(time, [class*='text-gray-']) {
+  color: var(--jf-overlay-muted) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] [class*='text-blue-'],
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] [class*='text-blue-'] {
+  color: var(--jf-overlay-primary-strong) !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] [class*='from-blue-'][class*='rounded-'],
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] [class*='from-blue-'][class*='rounded-'] {
+  background: var(--jf-overlay-primary) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] [class*='bg-gray-100'],
+body > [class~='z-[100]'] > [class~='max-w-[620px]'] [class*='bg-blue-100'] {
+  border: 1px solid var(--jf-overlay-border) !important;
+  background: var(--jf-overlay-panel-muted) !important;
+  color: var(--jf-overlay-primary-strong) !important;
+}
+
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :last-child {
+  border-color: var(--jf-overlay-border) !important;
+  background: color-mix(in srgb, var(--jf-overlay-panel-muted) 58%, var(--jf-overlay-panel)) !important;
+}
+
+body > [class~='z-[110]'] > [class~='max-w-[780px]'] > :last-child button:first-child {
+  border-color: var(--jf-overlay-border-strong) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: none !important;
+}
+
+/* Account testing is identifiable by its terminal surface. */
+.modal-content:has(.modal-body .font-mono[class*='bg-gray-900'])
+  .modal-body > .space-y-4 > .flex.items-center.justify-between.rounded-xl {
+  border-color: var(--jf-overlay-border) !important;
+  background: var(--jf-overlay-panel-muted) !important;
+  background-image: none !important;
+}
+
+.modal-content:has(.modal-body .font-mono[class*='bg-gray-900'])
+  .modal-body .bg-gradient-to-br[class*='from-primary-'] {
+  border: 1px solid color-mix(in srgb, var(--jf-overlay-primary) 36%, transparent);
+  background: var(--jf-overlay-primary) !important;
+  background-image: none !important;
+  box-shadow: 0 7px 18px color-mix(in srgb, var(--jf-overlay-primary) 20%, transparent);
+}
+
+.modal-content .font-mono[class*='bg-gray-900'] {
+  border-color: color-mix(in srgb, var(--jf-overlay-primary) 24%, #10120f) !important;
+  border-radius: 8px !important;
+  background: #101510 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+/* Select menus are teleported separately from their parent dialog. */
+.select-dropdown-portal {
+  border-color: var(--jf-overlay-border) !important;
+  border-radius: 8px !important;
+  background: var(--jf-overlay-panel) !important;
+  color: var(--jf-overlay-text) !important;
+  box-shadow: var(--jf-overlay-shadow) !important;
+}
+
+.select-dropdown-portal .select-option {
+  color: var(--jf-overlay-text) !important;
+}
+
+.select-dropdown-portal :is(.select-option:hover, .select-option-focused) {
+  background: var(--jf-overlay-panel-muted) !important;
+}
+
+.select-dropdown-portal .select-option-selected {
+  background: var(--jf-overlay-primary-soft) !important;
+  color: var(--jf-overlay-primary-strong) !important;
+}
+
+@media (max-width: 640px) {
+  body > [aria-live='polite'][aria-atomic='true'] {
+    top: 12px !important;
+    right: 12px !important;
+    left: 12px;
+  }
+
+  body > [aria-live='polite'][aria-atomic='true'] > div {
+    width: 100%;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .modal-content {
+    border-radius: 12px !important;
+  }
+
+  body > [class~='z-[100]'] > [class~='max-w-[620px]'],
+  body > [class~='z-[110]'] > [class~='max-w-[780px]'] {
+    border-radius: 12px !important;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding-inline: 16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > [aria-live='polite'][aria-atomic='true'] > div,
+  .modal-content,
+  .modal-content *,
+  body > [class~='z-[100]'] > [class~='max-w-[620px]'] *,
+  body > [class~='z-[110]'] > [class~='max-w-[780px]'] * {
+    transition-duration: 1ms !important;
+  }
+}
