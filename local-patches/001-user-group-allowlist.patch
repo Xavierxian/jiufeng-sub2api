@@ -1,0 +1,15 @@
+diff --git a/backend/internal/service/user_can_bind_group_test.go b/backend/internal/service/user_can_bind_group_test.go
+--- a/backend/internal/service/user_can_bind_group_test.go
++++ b/backend/internal/service/user_can_bind_group_test.go
+@@ -26,5 +26,11 @@ func TestUserCanBindGroup(t *testing.T) {
+ 			groupID: publicGroupA,
+ 			want:    true,
+ 		},
++		{
++			name:    "an unrestricted user with an explicit empty list keeps public groups",
++			user:    User{RestrictPublicGroups: false, AllowedGroups: []int64{}},
++			groupID: publicGroupA,
++			want:    true,
++		},
+ 		{
+ 			name:        "exclusive group needs an explicit grant",
