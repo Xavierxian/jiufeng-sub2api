@@ -1,0 +1,331 @@
+/* Shared Jiufeng authentication palette for login and registration. */
+.jf-auth-page {
+  --jf-auth-canvas: #f7f6f2;
+  --jf-auth-panel: #fffefa;
+  --jf-auth-panel-soft: #f4f6f2;
+  --jf-auth-border: #dfe5dc;
+  --jf-auth-ink: #171916;
+  --jf-auth-muted: #626a63;
+  --jf-auth-soft: #879088;
+  --jf-auth-jade: #256c60;
+  --jf-auth-jade-strong: #174e46;
+  --jf-auth-jade-pale: #e3efeb;
+  --jf-auth-shadow: 0 28px 72px rgba(37, 61, 50, .11);
+  color-scheme: light;
+}
+
+.jf-auth-page.jf-auth-page.jf-auth-page {
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(77, 136, 111, .09), transparent 38%),
+    var(--jf-auth-canvas);
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .sui-brand,
+.jf-auth-page.jf-auth-page .jf-brand {
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .sui-brand strong,
+.jf-auth-page.jf-auth-page .jf-brand strong {
+  color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .sui-home-link,
+.jf-auth-page.jf-auth-page .jf-home-link {
+  color: var(--jf-auth-muted);
+}
+
+.jf-auth-page.jf-auth-page .sui-home-link:hover,
+.jf-auth-page.jf-auth-page .jf-home-link:hover {
+  color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .sui-header-actions .relative > button,
+.jf-auth-page.jf-auth-page .jf-header-actions .relative > button {
+  border: 1px solid rgba(37, 108, 96, .12);
+  border-radius: 12px;
+  background: rgba(255, 254, 250, .72);
+}
+
+.jf-auth-page.jf-auth-page .sui-header-actions .relative > button:hover,
+.jf-auth-page.jf-auth-page .jf-header-actions .relative > button:hover {
+  background: var(--jf-auth-jade-pale);
+}
+
+.jf-auth-page.jf-auth-page .sui-header-actions .absolute,
+.jf-auth-page.jf-auth-page .jf-header-actions .absolute {
+  border-color: var(--jf-auth-border);
+  background: var(--jf-auth-panel);
+  box-shadow: var(--jf-auth-shadow);
+}
+
+.jf-auth-page.jf-auth-page .sui-hero-kicker,
+.jf-auth-page.jf-auth-page .jf-hero-kicker {
+  color: #527568;
+}
+
+.jf-auth-page.jf-auth-page .sui-hero-copy h1 span:last-child,
+.jf-auth-page.jf-auth-page .jf-hero-inner h1 span:last-child,
+.jf-auth-page.jf-auth-page .jf-verify-hero h1 span:last-child {
+  color: #557267;
+}
+
+.jf-auth-page.jf-auth-page .jf-verify-hero h1 span:first-child {
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .sui-hero-line,
+.jf-auth-page.jf-auth-page .jf-hero-line {
+  background: linear-gradient(90deg, rgba(37, 108, 96, .30), rgba(37, 108, 96, .04));
+}
+
+.jf-auth-page.jf-auth-page .sui-hero-copy ul,
+.jf-auth-page.jf-auth-page .jf-feature-list {
+  color: #59645c;
+}
+
+.jf-auth-page.jf-auth-page .sui-hero-copy li svg,
+.jf-auth-page.jf-auth-page .jf-feature-list li svg {
+  color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .sui-card,
+.jf-auth-page.jf-auth-page .jf-register-card,
+.jf-auth-page.jf-auth-page .jf-verify-card {
+  border: 1px solid rgba(82, 116, 99, .19);
+  border-radius: 24px;
+  background: rgba(255, 254, 250, .93);
+  box-shadow: var(--jf-auth-shadow);
+}
+
+.jf-auth-page.jf-auth-page .sui-card-heading strong,
+.jf-auth-page.jf-auth-page .sui-card-heading h2,
+.jf-auth-page.jf-auth-page .jf-card-heading strong,
+.jf-auth-page.jf-auth-page .jf-card-heading h2,
+.jf-auth-page.jf-auth-page .jf-empty-state strong,
+.jf-auth-page.jf-auth-page .jf-empty-state h2 {
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .sui-card-heading p,
+.jf-auth-page.jf-auth-page .jf-card-heading p,
+.jf-auth-page.jf-auth-page .jf-empty-state p {
+  color: #7d8b80;
+}
+
+.jf-auth-page.jf-auth-page .sui-card-heading span,
+.jf-auth-page.jf-auth-page .jf-card-heading span,
+.jf-auth-page.jf-auth-page .jf-empty-state > span:not(.jf-state-icon) {
+  color: var(--jf-auth-muted);
+}
+
+.jf-auth-page.jf-auth-page .sui-field label,
+.jf-auth-page.jf-auth-page .jf-field label {
+  color: #343d36;
+}
+
+.jf-auth-page.jf-auth-page .sui-input-wrap,
+.jf-auth-page.jf-auth-page .jf-input-wrap {
+  border-color: var(--jf-auth-border);
+  border-radius: 12px;
+  background: var(--jf-auth-panel-soft);
+  color: #829087;
+}
+
+.jf-auth-page.jf-auth-page .sui-input-wrap:focus-within,
+.jf-auth-page.jf-auth-page .jf-input-wrap:focus-within {
+  border-color: var(--jf-auth-jade);
+  background: var(--jf-auth-panel);
+  box-shadow: 0 0 0 4px rgba(37, 108, 96, .12);
+}
+
+.jf-auth-page.jf-auth-page .sui-input-wrap.is-error,
+.jf-auth-page.jf-auth-page .jf-input-wrap.is-error {
+  border-color: #d77a73;
+  background: #fff8f6;
+  box-shadow: 0 0 0 4px rgba(199, 83, 72, .10);
+}
+
+.jf-auth-page.jf-auth-page .jf-input-wrap.is-valid {
+  border-color: #73a68d;
+  background: #f2f8f3;
+}
+
+.jf-auth-page.jf-auth-page .sui-input-wrap input,
+.jf-auth-page.jf-auth-page .jf-input-wrap input {
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .sui-input-wrap input::placeholder,
+.jf-auth-page.jf-auth-page .jf-input-wrap input::placeholder {
+  color: #929d95;
+}
+
+.jf-auth-page.jf-auth-page .jf-code-input {
+  border-color: var(--jf-auth-border);
+  background: var(--jf-auth-panel-soft);
+  color: var(--jf-auth-ink);
+}
+
+.jf-auth-page.jf-auth-page .jf-code-input:focus {
+  border-color: var(--jf-auth-jade);
+  background: var(--jf-auth-panel);
+  box-shadow: 0 0 0 4px rgba(37, 108, 96, .12);
+}
+
+.jf-auth-page.jf-auth-page .jf-code-input.is-error {
+  border-color: #d77a73;
+  background: #fff8f6;
+  box-shadow: 0 0 0 4px rgba(199, 83, 72, .10);
+}
+
+.jf-auth-page.jf-auth-page .jf-code-input::placeholder {
+  color: #929d95;
+}
+
+.jf-auth-page.jf-auth-page .jf-card-heading b {
+  color: var(--jf-auth-jade-strong);
+}
+
+.jf-auth-page.jf-auth-page .jf-verify-card .jf-state {
+  border-color: var(--jf-auth-border);
+  background: var(--jf-auth-panel-soft);
+  color: var(--jf-auth-muted);
+}
+
+.jf-auth-page.jf-auth-page .jf-state-success {
+  border-color: #cbded2;
+  background: var(--jf-auth-jade-pale);
+  color: var(--jf-auth-jade-strong);
+}
+
+.jf-auth-page.jf-auth-page .jf-state-success svg,
+.jf-auth-page.jf-auth-page .jf-state-icon {
+  color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .jf-state-icon {
+  border-color: #cbded2;
+  background: var(--jf-auth-jade-pale);
+}
+
+.jf-auth-page.jf-auth-page .sui-eye,
+.jf-auth-page.jf-auth-page .jf-eye {
+  color: #718078;
+}
+
+.jf-auth-page.jf-auth-page .sui-eye:hover,
+.jf-auth-page.jf-auth-page .jf-eye:hover {
+  color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .sui-forgot,
+.jf-auth-page.jf-auth-page .sui-register a,
+.jf-auth-page.jf-auth-page .jf-agreement-row button,
+.jf-auth-page.jf-auth-page .jf-login-link a,
+.jf-auth-page.jf-auth-page .jf-resend button:not(:disabled),
+.jf-auth-page.jf-auth-page .jf-back-link {
+  color: var(--jf-auth-jade-strong);
+}
+
+.jf-auth-page.jf-auth-page .sui-forgot:hover,
+.jf-auth-page.jf-auth-page .sui-register a:hover,
+.jf-auth-page.jf-auth-page .jf-login-link a:hover,
+.jf-auth-page.jf-auth-page .jf-resend button:not(:disabled):hover,
+.jf-auth-page.jf-auth-page .jf-back-link:hover {
+  color: #0f7868;
+}
+
+.jf-auth-page.jf-auth-page .sui-submit,
+.jf-auth-page.jf-auth-page .jf-submit {
+  background: linear-gradient(110deg, #1d5047, #2d7566);
+  box-shadow: 0 10px 22px rgba(37, 108, 96, .19);
+}
+
+.jf-auth-page.jf-auth-page .sui-submit:hover:not(:disabled),
+.jf-auth-page.jf-auth-page .jf-submit:hover:not(:disabled) {
+  background: linear-gradient(110deg, #17483f, #256c60);
+  box-shadow: 0 13px 26px rgba(37, 108, 96, .25);
+}
+
+.jf-auth-page.jf-auth-page .sui-submit:disabled,
+.jf-auth-page.jf-auth-page .jf-submit:disabled {
+  background: #89918c;
+}
+
+.jf-auth-page.jf-auth-page .sui-oauth .btn,
+.jf-auth-page.jf-auth-page .jf-oauth .btn {
+  border: 1px solid var(--jf-auth-border);
+  background: var(--jf-auth-panel);
+  color: var(--jf-auth-ink);
+  box-shadow: 0 2px 7px rgba(31, 49, 39, .035);
+}
+
+.jf-auth-page.jf-auth-page .sui-oauth .btn:hover,
+.jf-auth-page.jf-auth-page .jf-oauth .btn:hover {
+  border-color: rgba(37, 108, 96, .42);
+  background: var(--jf-auth-jade-pale);
+}
+
+.jf-auth-page.jf-auth-page .sui-divider::before,
+.jf-auth-page.jf-auth-page .sui-divider::after,
+.jf-auth-page.jf-auth-page .jf-divider::before,
+.jf-auth-page.jf-auth-page .jf-divider::after {
+  background: rgba(37, 108, 96, .16);
+}
+
+.jf-auth-page.jf-auth-page :is(a, button, input):focus-visible {
+  outline: 2px solid var(--jf-auth-jade);
+  outline-offset: 3px;
+}
+
+/* Login fields already show focus on their rounded wrapper. */
+.jf-auth-page.sui-login-page .sui-input-wrap input:focus-visible {
+  outline: none;
+}
+
+.jf-auth-page.jf-auth-page .jf-register-panel {
+  border-left-color: rgba(37, 108, 96, .14);
+}
+
+.jf-auth-page.jf-auth-page .jf-register-card {
+  padding: 28px 30px 30px;
+}
+
+.jf-auth-page.jf-auth-page .jf-agreement-row input {
+  accent-color: var(--jf-auth-jade);
+}
+
+.jf-auth-page.jf-auth-page .jf-agreement-row {
+  color: var(--jf-auth-muted);
+}
+
+.jf-auth-page.jf-auth-page .jf-field-hint {
+  color: #758178;
+}
+
+.jf-auth-page.jf-auth-page .jf-disabled-message {
+  border-color: #e4d5b7;
+  background: #fbf5e9;
+  color: #80652f;
+}
+
+@media (max-width: 640px) {
+  .jf-auth-page.jf-auth-page.jf-auth-page {
+    background:
+      radial-gradient(ellipse at 78% 8%, rgba(77, 136, 111, .08), transparent 38%),
+      var(--jf-auth-canvas);
+  }
+
+  .jf-auth-page.jf-auth-page .jf-register-card {
+    padding: 26px 20px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jf-auth-page.jf-auth-page * {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
