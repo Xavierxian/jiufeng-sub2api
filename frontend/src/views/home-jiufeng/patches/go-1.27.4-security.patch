@@ -1,0 +1,89 @@
+diff --git a/backend/go.mod b/backend/go.mod
+--- a/backend/go.mod
++++ b/backend/go.mod
+@@ -1,6 +1,6 @@
+ module github.com/Wei-Shaw/sub2api
+ 
+-go 1.27.3
++go 1.27.4
+ 
+ require (
+ 	entgo.io/ent v0.14.5
+diff --git a/Dockerfile b/Dockerfile
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -8,7 +8,7 @@
+ # =============================================================================
+ 
+ ARG NODE_IMAGE=node:24-alpine
+-ARG GOLANG_IMAGE=golang:1.27.3-alpine
++ARG GOLANG_IMAGE=golang:1.27.4-alpine
+ ARG ALPINE_IMAGE=alpine:3.21
+ ARG POSTGRES_IMAGE=postgres:18-alpine
+ ARG GOPROXY=https://goproxy.cn,direct
+diff --git a/backend/Dockerfile b/backend/Dockerfile
+--- a/backend/Dockerfile
++++ b/backend/Dockerfile
+@@ -1,4 +1,4 @@
+-FROM golang:1.27.2-alpine
++FROM golang:1.27.4-alpine
+ 
+ WORKDIR /app
+ 
+diff --git a/deploy/Dockerfile b/deploy/Dockerfile
+--- a/deploy/Dockerfile
++++ b/deploy/Dockerfile
+@@ -7,7 +7,7 @@
+ # =============================================================================
+ 
+ ARG NODE_IMAGE=node:24-alpine
+-ARG GOLANG_IMAGE=golang:1.27.2-alpine
++ARG GOLANG_IMAGE=golang:1.27.4-alpine
+ ARG ALPINE_IMAGE=alpine:3.20
+ ARG GOPROXY=https://goproxy.cn,direct
+ ARG GOSUMDB=sum.golang.google.cn
+diff --git a/.github/workflows/backend-ci.yml b/.github/workflows/backend-ci.yml
+--- a/.github/workflows/backend-ci.yml
++++ b/.github/workflows/backend-ci.yml
+@@ -35,7 +35,7 @@
+           cache-dependency-path: backend/go.sum
+       - name: Verify Go version
+         run: |
+-          go version | grep -q 'go1.27.3'
++          go version | grep -q 'go1.27.4'
+       - name: Unit tests
+         working-directory: backend
+         run: make test-unit
+@@ -75,7 +75,7 @@
+           cache-dependency-path: backend/go.sum
+       - name: Verify Go version
+         run: |
+-          go version | grep -q 'go1.27.3'
++          go version | grep -q 'go1.27.4'
+       - name: golangci-lint
+         uses: golangci/golangci-lint-action@v9
+         with:
+diff --git a/.github/workflows/security-scan.yml b/.github/workflows/security-scan.yml
+--- a/.github/workflows/security-scan.yml
++++ b/.github/workflows/security-scan.yml
+@@ -23,7 +23,7 @@
+           cache-dependency-path: backend/go.sum
+       - name: Verify Go version
+         run: |
+-          go version | grep -q 'go1.27.3'
++          go version | grep -q 'go1.27.4'
+       - name: Run govulncheck
+         working-directory: backend
+         run: |
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -141,7 +141,7 @@
+           check-latest: false
+           cache: false
+       - name: Verify Go version
+-        run: go version | grep -q 'go1.27.3'
++        run: go version | grep -q 'go1.27.4'
+       - name: Restore target-specific Go cache
+         id: go-cache
+         uses: actions/cache/restore@v6
